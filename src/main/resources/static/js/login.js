@@ -1,4 +1,3 @@
-
 const loginEmail = document.getElementById('username');
 const loginPassword = document.getElementById("password")
 const loginSubmitButton = document.getElementById('login-btn');
