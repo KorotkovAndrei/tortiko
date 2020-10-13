@@ -4,7 +4,9 @@ import com.example.tortiko.model.User;
 import com.example.tortiko.model.UserDTO;
 import com.example.tortiko.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.lang.NonNull;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -42,8 +44,14 @@ public class UserController {
     }
     @RequestMapping(value = "/username", method = RequestMethod.GET)
     @ResponseBody
-    public String currentUserName(Authentication authentication) {
-        return authentication.getName();
+    public String currentUserName(Authentication authentication)throws UsernameNotFoundException {
+        try {
+            String loggedUser = authentication.getName();
+            return loggedUser;
+        }
+        catch(NullPointerException e) {
+            return "";
+        }
     }
 
 }
