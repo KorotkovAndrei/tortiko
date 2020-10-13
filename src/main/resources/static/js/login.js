@@ -14,14 +14,18 @@ const loginNav = document.querySelector('.login-nav');
 
 
 function checkIfLogged() {
-    fetch('http://localhost:8080/username')
-        .then(response => response.json())
+    fetch('http://localhost:8080/username',{
+        method: 'GET'
+    })
+        .then(response => responseFromPromiseHandle(response))
+        .then(res => res.text())
         .then(username => usernameCheck(username))
         .catch(logoutHandle())
 }
 checkIfLogged();
 
 function usernameCheck(username) {
+    console.log(username);
     if(username != null && username != ""){
         logoutNav.classList.remove('hide');
         loginNav.classList.add('hide');
@@ -31,6 +35,13 @@ function logoutHandle() {
     loginNav.classList.remove('hide');
     logoutNav.classList.add('hide');
 }
+function responseFromPromiseHandle(response) {
+        if (!response.ok) {
+            console.log(response)
+            throw Error(response.statusText);
+        }
+        return response;
+    }
 //test case end
 
 function validateRegistration(){
