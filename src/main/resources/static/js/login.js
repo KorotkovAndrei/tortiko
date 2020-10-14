@@ -24,7 +24,6 @@ function checkIfLogged() {
 checkIfLogged();
 
 function usernameCheck(username) {
-    console.log(username);
     if(username != null && username != ""){
         logoutNav.classList.remove('hide');
         loginNav.classList.add('hide');
