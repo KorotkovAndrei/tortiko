@@ -33,7 +33,7 @@
 .grid-subdiv-3 {
   width: 80%;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
   grid-gap: 0.7vh;
   justify-items: center;
@@ -42,21 +42,11 @@
 
 }
 
-
-
-@media screen and (max-width: 1240px) {
-    .grid-subdiv-3 {
-      width: 80%;
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr ;
-      grid-template-rows: 1fr 1fr 1fr 1fr;
-      grid-gap: 5px;
-      justify-items: center;
-      align-items: center;
-      justify-self: center;
-
-  }
+.shopping-card-container {
+  width: 250px;
 }
+
+
 
 @media screen and (max-width: 952px) {
   body {
@@ -81,10 +71,10 @@
   }
 
   .grid-subdiv-3 {
-    width: 80%;
+    width: 100%;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-gap: 5px;
     justify-items: center;
     align-items: center;
@@ -100,30 +90,38 @@
 
 @media screen and (max-width: 375px) {
 
-  .shop-container {
-    display: grid;
-    grid-template-rows: 25vh 1fr 25vh;
-    grid-template-columns: 1fr;
-    background: #f7f7f7;
-  }
+    .shop-container {
+      display: grid;
+      grid-template-rows: 25vh 1fr 25vh;
+      grid-template-columns: 1fr;
+      background: #f7f7f7;
+    }
 
-  .grid-subdiv-3 {
-    width: 80%;
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-gap: 5px;
-    justify-items: center;
-    align-items: center;
-    justify-self: center;
+    .grid-subdiv-3 {
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+      grid-gap: 5px;
+      justify-items: center;
+      align-items: center;
+      justify-self: center;
 
-  }
+    }
 
-  .grid-subdiv-1 {
-        font-size: 12px;
+    .grid-subdiv-1 {
+          font-size: 12px;
 
-  }
+    }
+    .shopping-card-container > img {
+      width: 100%;
+      height: auto;
+    }
 
+    .shopping-card-container {
+      width: 100%;
+      padding: 10px;
+    }
 
 }
 
@@ -162,8 +160,4 @@
 .p-price {
   font-weight: bold;
   font-size: 16px;
-}
-
-.shopping-card-container {
-  width: 250px;
 }
