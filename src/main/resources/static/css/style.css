@@ -33,6 +33,11 @@ nav{
 }
 
 .nav-links a{
+  -webkit-transform: skewX(15deg);
+  -moz-transform: skewX(15deg);
+  -ms-transform: skewX(15deg);
+  -o-transform: skewX(15deg);
+  transform: skewX(15deg);
    color: rgb(226, 226, 226);
    text-decoration: none;
    letter-spacing: 3px;
@@ -40,7 +45,13 @@ nav{
 }
 
 .nav-links li{
+
+  transform: skewX(-15deg);
+  padding: 5px;
+  display: flex;
    list-style: none;
+   min-height: 8vh;
+   align-items: center;
 }
 
 .burger{
