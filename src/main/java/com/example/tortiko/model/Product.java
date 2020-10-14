@@ -1,6 +1,8 @@
 package com.example.tortiko.model;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name="products", schema = "public")
@@ -18,11 +20,10 @@ public class Product {
     @Column(name = "product_photo_url")
     private String productPhotoUrl;
 
-    @Column(name = "product_price")
-    private int productPrice;
 
-    @Column(name = "product_size")
-    private String productSize;
+    @Column(name = "product_prices")
+    private ArrayList<Integer> productPrices;
+
 
     public Long getId() {
         return id;
@@ -56,19 +57,11 @@ public class Product {
         this.productPhotoUrl = productPhotoUrl;
     }
 
-    public int getProductPrice() {
-        return productPrice;
+    public ArrayList<Integer> getProductPrices() {
+        return productPrices;
     }
 
-    public void setProductPrice(int productPrice) {
-        this.productPrice = productPrice;
-    }
-
-    public String getProductSize() {
-        return productSize;
-    }
-
-    public void setProductSize(String productSize) {
-        this.productSize = productSize;
+    public void setProductPrices(ArrayList<Integer> productPrices) {
+        this.productPrices = productPrices;
     }
 }

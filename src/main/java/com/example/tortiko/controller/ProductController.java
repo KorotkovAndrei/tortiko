@@ -6,6 +6,7 @@ import com.example.tortiko.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
@@ -33,8 +34,14 @@ public class ProductController {
         newProduct.setProductDescription(productDTO.getProductDescription());
         newProduct.setProductName(productDTO.getProductName());
         newProduct.setProductPhotoUrl(productDTO.getProductPhotoUrl());
-        newProduct.setProductPrice(productDTO.getProductPrice());
-        newProduct.setProductSize(productDTO.getProductSize());
+        newProduct.setProductPrices(countPrice(productDTO.getBasePrice()));
         return productRepository.save(newProduct);
+    }
+    public ArrayList<Integer> countPrice(Integer basePrice){
+        ArrayList<Integer> prices = new ArrayList<>(3);
+        prices.add(0,basePrice);
+        prices.add(1,basePrice + (int)(basePrice * 0.25));
+        prices.add(2,basePrice + (int)(basePrice * 0.5));
+        return prices;
     }
 }

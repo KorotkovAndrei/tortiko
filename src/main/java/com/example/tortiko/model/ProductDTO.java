@@ -4,8 +4,8 @@ public class ProductDTO {
     private String productName;
     private String productDescription;
     private String productPhotoUrl;
-    private int productPrice;
-    private String productSize;
+    private Integer basePrice;
+
 
     public String getProductName() {
         return productName;
@@ -31,19 +31,13 @@ public class ProductDTO {
         this.productPhotoUrl = productPhotoUrl;
     }
 
-    public int getProductPrice() {
-        return productPrice;
+
+    public Integer getBasePrice() {
+        return basePrice;
     }
 
-    public void setProductPrice(int productPrice) {
-        this.productPrice = productPrice;
+    public void setBasePrice(Integer basePrice) {
+        this.basePrice = basePrice;
     }
 
-    public String getProductSize() {
-        return productSize;
-    }
-
-    public void setProductSize(String productSize) {
-        this.productSize = productSize;
-    }
 }
