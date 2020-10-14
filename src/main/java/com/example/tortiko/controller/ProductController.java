@@ -23,6 +23,7 @@ public class ProductController {
     public Product getOne(@PathVariable("id") Product product){
         return product;
     }
+
     @RequestMapping(value = "/products/getAll", method = RequestMethod.GET)
     public List<Product> productList(){
         return productRepository.findAll();
