@@ -9,7 +9,7 @@ function updateProductsInDom(productList) {
 function productTemplate({id, productName, productDescription, productPhotoUrl, productPrices }) {
     return    `<div class="grid-3-elem-9" >
                 <section class="shopping-card-container">
-                    <img src="${productPhotoUrl}" alt="" >
+                    <img src="${productPhotoUrl}" height=300px width=250px>
                     <section class="shopping-card-info">
                         <p>${productName}</p>
                         <section class="shopping-card-price">
