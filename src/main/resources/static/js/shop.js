@@ -1,4 +1,4 @@
-const selectedProduct = document.querySelector('.main-section-product-list');
+const selectedProduct = document.querySelector('.grid-subdiv-3');
 
 function updateProductsInDom(productList) {
     selectedProduct.innerHTML = '';
