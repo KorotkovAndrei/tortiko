@@ -8,16 +8,18 @@ function updateProductsInDom(productList) {
 
 function productTemplate({id, productName, productDescription, productPhotoUrl, productPrices }) {
     return    `<div class="grid-3-elem-9" >
-                <section class="shopping-card-container">
-                    <img src="${productPhotoUrl}" height=300px width=250px>
-                    <section class="shopping-card-info">
-                        <p>${productName}</p>
-                        <section class="shopping-card-price">
-                            <p class="p-price">${productPrices[0]} $</p>
-                        <img class="grid-shopping-cart-icon" src="img/png/039-shopping-cart.png" alt="">
+                <a href="/shop/${id}">
+                    <section class="shopping-card-container">
+                        <img src="${productPhotoUrl}" height=300px width=250px>
+                        <section class="shopping-card-info">
+                            <p>${productName}</p>
+                            <section class="shopping-card-price">
+                                <p class="p-price">${productPrices[0]} $</p>
+                            <img class="grid-shopping-cart-icon" src="img/png/039-shopping-cart.png" alt="">
+                            </section>
                         </section>
                     </section>
-                </section>
+                </a>
             </div>`
 }
 function getProducts() {

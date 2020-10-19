@@ -5,6 +5,7 @@ import com.example.tortiko.model.ProductDTO;
 import com.example.tortiko.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,10 +20,14 @@ public class ProductController {
     public ProductController(ProductRepository productRepository){
         this.productRepository = productRepository;
     }
-    @GetMapping("/products/{id}")
-    public Product getOne(@PathVariable("id") Product product){
-        return product;
-    }
+
+
+    /*@GetMapping("/shop/{id}")
+    @ResponseBody
+    public String  getOne(@PathVariable Long id){
+        Product productFromDb = productRepository.getOne(id);
+        return "product name is " + productFromDb.getProductName();
+    }*/
 
     @RequestMapping(value = "/products/getAll", method = RequestMethod.GET)
     public List<Product> productList(){
@@ -45,4 +50,5 @@ public class ProductController {
         prices.add(2,basePrice + (int)(basePrice * 0.5));
         return prices;
     }
+
 }
