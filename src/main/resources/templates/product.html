@@ -1,10 +1,85 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" >
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Item</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" href="product.css">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
-Here Georgiy will create template of our product-page
+
+  <nav>
+      <div class="logo">
+          <h4>TORTIKO</h4>
+      </div>
+      <ul class="nav-links">
+          <li>
+              <a href="#">Home</a>
+          </li>
+          <li>
+              <a href="#">About</a>
+          </li>
+          <li class="shop">
+              <a  href="/shop.html">Shop</a>
+          </li>
+          <li>
+              <a href="#">Contact</a>
+          </li>
+          <li></li>
+          <li>
+              <a class="login-nav" id='lgnButton'>Login</a>
+          </li>
+          <li>
+              <a class="logout-nav hide" href='/logout' >Logout</a>
+          </li>
+      </ul>
+      <div class="burger">
+          <div class="line1"></div>
+          <div class="line2"></div>
+          <div class="line3"></div>
+      </div>
+  </nav>
+
+  <main class="product-container">
+    <div class="grid-col-1">
+      <img src="img/cake.png" alt="CAKE">
+    </div>
+      <div class="grid-row-1">
+        CHOCOLATE SURPRISE CAKE
+      </div>
+      <div class="grid-row-2">
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          Suspendisse metus nunc, volutpat eget faucibus vel,
+          convallis quis urna. Maecenas lacinia diam et ipsum
+          porttitor ullamcorper. Nullam nec orci pretium, venenatis
+          velit quis, tempor enim. Ut accumsan, risus
+        </p>
+      </div>
+      <div class="grid-row-3">
+        <button type="button" name="button">small</button>
+        <button type="button" name="button">medium</button>
+        <button type="button" name="button">large</button>
+      </div>
+      <div class="grid-row-4">
+        <p>£20</p>
+      </div>
+      <div class="grid-row-5">
+        <div class="plus-minus">
+        <img src="img/minus-button.png" alt="">
+        <p class="number">1</p>
+        <img src="img/plus-button.png" alt="">
+        </div>
+        <div class="add-to-card-btn">
+        <button type="button" name="button">Add to card</button>
+        </div>
+      </div>
+  </main>
+
+  <script src="js/mobile-navbar.js"></script>
+  <script src="js/shop.js"></script>
+
 </body>
 </html>
