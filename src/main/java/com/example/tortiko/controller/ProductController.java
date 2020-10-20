@@ -36,7 +36,7 @@ public class ProductController {
     @RequestMapping(value = "/upload-product", method = RequestMethod.POST)
     public Product createProduct(@RequestBody ProductDTO productDTO)  {
         Product newProduct = new Product();
-        newProduct.setId(new Random().nextLong());
+        newProduct.setId(1 + (long) (Math.random() * (1000 - 1)));
         newProduct.setProductDescription(productDTO.getProductDescription());
         newProduct.setProductName(productDTO.getProductName());
         newProduct.setProductPhotoUrl(productDTO.getProductPhotoUrl());
