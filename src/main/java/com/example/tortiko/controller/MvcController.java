@@ -21,8 +21,8 @@ public class MvcController {
     }
 
     @RequestMapping("/shop/{id}")
-    String getProduct() {
-
+    public String getProduct(@PathVariable("id") Long id, Model model) {
+        model.addAttribute("product", productRepository.getOne(id));
 
         return "product";
     }

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>Item</title>
@@ -44,18 +44,14 @@
 
   <main class="product-container">
     <div class="grid-col-1">
-      <img src="img/cake.png" alt="CAKE">
+      <img th:src="${product.getProductPhotoUrl()}">
     </div>
       <div class="grid-row-1">
-        CHOCOLATE SURPRISE CAKE
+         <p th:text="${product.getProductName()}"></p>
       </div>
       <div class="grid-row-2">
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          Suspendisse metus nunc, volutpat eget faucibus vel,
-          convallis quis urna. Maecenas lacinia diam et ipsum
-          porttitor ullamcorper. Nullam nec orci pretium, venenatis
-          velit quis, tempor enim. Ut accumsan, risus
+        <p th:text="${product.getProductDescription()}">
+
         </p>
       </div>
       <div class="grid-row-3">
