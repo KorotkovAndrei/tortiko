@@ -70,7 +70,7 @@ function registerButton() {
         headers: {
             'Content-Type': 'application/json',
         }
-    })
+    }).then(response => response.json()).then(text => console.log(text)); // NEED TO PRINT THIS RESPONSE ON THE SCREEN NOT IN CONSOLE
 }
 
 registerSubmitButton.addEventListener('click', function() {
