@@ -294,3 +294,31 @@ span{
 #register{
     left: 450px;
 }
+
+/* little modal window */
+
+.users-warning-modal {
+  margin: 0 auto;
+  position: absolute;
+  top: -70px;
+  width: 280px;
+  height: 50px;
+  background: #ffd4d4;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  color: black;
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 13px;
+  /* border: 4px solid red; */
+}
+
+.users-warning-modal img {
+  height: 7px;
+  width: 7px;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  cursor: pointer;
+}

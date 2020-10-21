@@ -32,13 +32,16 @@
             <span>Remember Password</span>
             <button id="login-btn" type="submit" class="submit-btn">Log in</button>
         </form>
-        <form id="register"  class="input-group">
+        <form id="register"  class="input-group"  onsubmit="checkTheReg();return false;">
+          <div id="usersBeWarned">
+
+          </div>
             <input id="register_email" type="email"  class="input-field" placeholder="Enter E-mail" required>
             <input id="register_password" type="password" class="input-field" placeholder="Enter Password" required>
             <input id="register_confirm_password" type="password" class="input-field" placeholder="Confirm Password" required>
             <input id='registerCheckbox' type="checkbox" class="login-checkbox">
             <span>I agree to the Terms and Conditions</span>
-            <button id="register-btn" type="submit" class="submit-btn">Register</button>
+            <button id="register-btn" type="submit" class="submit-btn" >Register</button>
         </form>
     </div>
 
@@ -48,6 +51,7 @@
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum commodo.</p>
         <a href="shop.html" class="button">Read more</a>
         </div>
+
     </header>
     <div id=darken class="darken off"></div>
 
@@ -121,13 +125,17 @@
 
     </div>
 
+
     <!-- techsupport modal -->
 
+
+
+
+    <script src="js/navplacer.js"></script>
     <script src="js/mobile-navbar.js"></script>
     <script src="js/login.js"></script>
     <script src="js/chat.js"></script>
     <script src="js/login-interaction.js"></script>
-    <script src="js/navplacer.js"></script>
 
 </body>
 </html>

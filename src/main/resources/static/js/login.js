@@ -58,24 +58,57 @@ function validateRegistration(){
 register_password.onchange = validateRegistration;
 register_confirm_password.onkeyup = validateRegistration;
 
+// let zz;
+//
+// function registerButton() {
 
-function registerButton() {
-    const bodyRegister = {
-        username: emailInput.value,
-        password: passwordInput.value,
-    };
-    fetch('http://localhost:8080/api/users/create-user', {
-        method: 'POST',
-        body: JSON.stringify(bodyRegister),
-        headers: {
-            'Content-Type': 'application/json',
-        }
-    }).then(response => response.json()).then(text => console.log(text)); // NEED TO PRINT THIS RESPONSE ON THE SCREEN NOT IN CONSOLE
+
+
+
+
+function checkTheReg() {
+  if ((passwordInput.value == passwordInputConfirm.value) && (registerCheckbox.checked == true)) {
+
+  const bodyRegister = {
+      username: emailInput.value,
+      password: passwordInput.value,
+  };
+  fetch('http://localhost:8080/api/users/create-user', {
+      method: 'POST',
+      body: JSON.stringify(bodyRegister),
+      headers: {
+          'Content-Type': 'application/json',
+      }
+  }).then(response => response.json()).then(text => {
+    // emailInput.setCustomValidity(`${text.text}`);
+    console.log(text);
+    if (text.text == "User already exist, please log in") {
+      let warningWindow = document.getElementById("usersBeWarned");
+      warningWindow.insertAdjacentHTML('afterbegin', `
+      <div id="usersWarningModal" class="users-warning-modal">
+      <p>${text.text}</p>
+      <img id="userExistsCross" src="img/svg/cancel.svg" alt="">
+      </div>
+      `);
+      userExistsCross.onclick = () => {
+        usersWarningModal.remove();
+      }
+    } else {
+      let form = document.getElementById('register');
+      form.submit();
+    }
+  });
+ }
 }
 
-registerSubmitButton.addEventListener('click', function() {
-    (passwordInput.value == passwordInputConfirm.value) && (registerCheckbox.checked == true) ? registerButton() : validateRegistration();
-});
+// else {
+//   validateRegistration();
+// }
+
+
+// registerSubmitButton.addEventListener('click', function(event) {
+//
+// });
 registerCheckbox.onclick = () => {
     registerCheckbox.setCustomValidity('');
 }
