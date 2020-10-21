@@ -58,14 +58,6 @@ function validateRegistration(){
 register_password.onchange = validateRegistration;
 register_confirm_password.onkeyup = validateRegistration;
 
-// let zz;
-//
-// function registerButton() {
-
-
-
-
-
 function checkTheReg() {
   if ((passwordInput.value == passwordInputConfirm.value) && (registerCheckbox.checked == true)) {
 
@@ -101,14 +93,7 @@ function checkTheReg() {
  }
 }
 
-// else {
-//   validateRegistration();
-// }
 
-
-// registerSubmitButton.addEventListener('click', function(event) {
-//
-// });
 registerCheckbox.onclick = () => {
     registerCheckbox.setCustomValidity('');
 }
