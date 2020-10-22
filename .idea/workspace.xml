@@ -214,6 +214,7 @@
     </state>
     <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1602014912483" />
 <<<<<<< HEAD
+<<<<<<< HEAD
     <state width="1589" height="213" key="GridCell.Tab.0.bottom" timestamp="1603374835756">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -234,6 +235,28 @@
     </state>
     <state width="1493" height="183" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1602172801830" />
     <state width="1589" height="213" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1603374835756" />
+=======
+    <state width="1589" height="213" key="GridCell.Tab.0.bottom" timestamp="1603307578256">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1493" height="183" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1602172801830" />
+    <state width="1589" height="213" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1603307578256" />
+    <state width="1589" height="213" key="GridCell.Tab.0.center" timestamp="1603307578256">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1493" height="183" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1602172801830" />
+    <state width="1589" height="213" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1603307578256" />
+    <state width="1589" height="213" key="GridCell.Tab.0.left" timestamp="1603307578256">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1493" height="183" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1602172801829" />
+    <state width="1589" height="213" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1603307578256" />
+    <state width="1589" height="213" key="GridCell.Tab.0.right" timestamp="1603307578256">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1493" height="183" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1602172801830" />
+    <state width="1589" height="213" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1603307578256" />
+>>>>>>> parent of 1dd4e03... comments are done
 =======
     <state width="1589" height="213" key="GridCell.Tab.0.bottom" timestamp="1603307578256">
       <screen x="0" y="0" width="1920" height="1040" />
