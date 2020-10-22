@@ -11,6 +11,54 @@ const registerSubmitButton = document.getElementById('register-btn');
 const logoutNav = document.querySelector('.logout-nav');
 const loginNav = document.querySelector('.login-nav');
 
+function loginOnSubmit() {
+
+  const bodyRegister = {
+      username: loginEmail.value,
+      password: loginPassword.value,
+  };
+  fetch('http://localhost:8080/api/users/create-user', {
+      method: 'POST',
+      body: JSON.stringify(bodyRegister),
+      headers: {
+          'Content-Type': 'application/json',
+      }
+  }).then(response => response.json()).then(text => {
+    if (text.text == "User already exist, please log in") {
+
+      let loginWindow = document.getElementById("loginBeWarned");
+
+      loginWindow.insertAdjacentHTML('afterbegin', `
+      <div id="loginWarningModal" class="login-warning-modal">
+      <p>Welcome to Tortiko!</p>
+      </div>
+      `);
+      setTimeout(() => {
+        lgnBox.classList.add('anim');
+        setTimeout(removeLoginModal, 500);
+      }, 1500);
+      setTimeout(() => {
+        let loginform = document.getElementById('login');
+        loginform.submit();
+      }, 1600);
+
+    } else {
+
+      let loginWindow = document.getElementById("loginBeWarned");
+
+      loginWindow.insertAdjacentHTML('afterbegin', `
+      <div id="loginWarningModal" class="users-warning-modal">
+      <p>No such user. Please register!</p>
+      <img id="loginExistsCross" src="img/svg/cancel.svg" alt="">
+      </div>
+      `);
+      setTimeout(() => {
+          register();
+          loginWarningModal.remove();
+      }, 1500);
+    }
+  });
+}
 
 function checkIfLogged() {
     fetch('http://localhost:8080/username',{
@@ -25,28 +73,14 @@ checkIfLogged();
 
 function usernameCheck(username) {
     if(username != null && username != ""){
-
-        // let loginWindow = document.getElementById("loginBeWarned");
-        // loginWindow.insertAdjacentHTML('afterbegin', `
-        // <div id="loginWarningModal" class="login-warning-modal">
-        // <p>${text.text}</p>
-        // <img id="loginExistsCross" src="../static/img/svg/cancel.svg" alt="">
-        // </div>
-        // `);
-        // loginExistsCross.onclick = () => {
-        //   usersWarningModal.remove();
-        // }
-        // setTimeout(function() {
-          // let loginform = document.getElementById('login');
-          // loginform.submit();
-          logoutNav.classList.remove('hide');
-          loginNav.classList.add('hide');
-        // }, 2000);
-
-
+        console.log(username);
+        console.log('yes')
+        logoutNav.classList.remove('hide');
+        loginNav.classList.add('hide');
     }
 }
 function logoutHandle() {
+    console.log('no')
     loginNav.classList.remove('hide');
     logoutNav.classList.add('hide');
 }
@@ -75,14 +109,6 @@ function validateRegistration(){
 register_password.onchange = validateRegistration;
 register_confirm_password.onkeyup = validateRegistration;
 
-// let zz;
-//
-// function registerButton() {
-
-
-
-
-
 function checkTheReg() {
   if ((passwordInput.value == passwordInputConfirm.value) && (registerCheckbox.checked == true)) {
 
@@ -110,22 +136,34 @@ function checkTheReg() {
       userExistsCross.onclick = () => {
         usersWarningModal.remove();
       }
+      setTimeout(() => {
+        login();
+      }, 1500);
     } else {
-      let form = document.getElementById('register');
-      form.submit();
+      let warningWindow = document.getElementById("usersBeWarned");
+      warningWindow.insertAdjacentHTML('afterbegin', `
+      <div id="usersWarningModal" class="login-warning-modal">
+      <p>Thank you for the registration!</p>
+      <img id="userExistsCross" src="img/svg/cancel.svg" alt="">
+      </div>
+      `);
+      userExistsCross.onclick = () => {
+        usersWarningModal.remove();
+      }
+      setTimeout(() => {
+        lgnBox.classList.add('anim');
+        setTimeout(removeLoginModal, 500);
+      }, 1500);
+      setTimeout(() => {
+        let form = document.getElementById('register');
+        form.submit();
+      }, 1600);
     }
   });
  }
 }
 
-// else {
-//   validateRegistration();
-// }
 
-
-// registerSubmitButton.addEventListener('click', function(event) {
-//
-// });
 registerCheckbox.onclick = () => {
     registerCheckbox.setCustomValidity('');
 }

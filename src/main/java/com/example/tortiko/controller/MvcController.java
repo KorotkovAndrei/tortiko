@@ -26,8 +26,4 @@ public class MvcController {
 
         return "product";
     }
-    @RequestMapping("/shop")
-    public String shop() {
-        return "shop";
-    }
 }

@@ -1,6 +1,7 @@
 .gradle
 /build/
 !gradle/wrapper/gradle-wrapper.jar
+*.properties
 
 
 ### IntelliJ IDEA ###
@@ -11,6 +12,3 @@
 *.ipr
 /out/
 gradle/
-.idea/workspace.xml
-.idea/workspace.xml
-.idea/workspace.xml

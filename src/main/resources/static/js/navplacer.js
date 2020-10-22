@@ -8,13 +8,13 @@ function placeNavbar() {
       </div>
       <ul class="nav-links">
           <li>
-              <a href="/">Home</a>
+              <a href="#">Home</a>
           </li>
           <li>
               <a href="#">About</a>
           </li>
           <li class="shop">
-              <a  href="/shop">Shop</a>
+              <a  href="/shop.html">Shop</a>
           </li>
           <li>
               <a href="#">Contact</a>

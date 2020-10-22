@@ -1,6 +1,6 @@
-function placelogin() {
-  let loginmodalwindow = document.getElementById("login-placeholder");
-  loginmodalwindow.insertAdjacentHTML('afterbegin', `
+function placeLogin() {
+  let loginmodal = document.getElementById("login-placeholder");
+  loginmodal.insertAdjacentHTML('afterbegin', `
 
   <div id='lgnBox' class="login-form-box off">
       <div class="login-button-box">
@@ -8,7 +8,7 @@ function placelogin() {
           <button type="button"  class="login-toggle-btn" onclick="login()">Log In</button>
           <button type="button"  class="login-toggle-btn" onclick="register()">Register</button>
       </div>
-      <form id="login" class="input-group" action="/login" method="post" onsubmit="usernameCheck(username);return false;>
+      <form id="login" class="input-group" action="/login" method="post" onsubmit="loginOnSubmit();return false;">
         <div id="loginBeWarned">
 
         </div>
@@ -34,4 +34,4 @@ function placelogin() {
   `)
 }
 
-window.onload(placelogin());
+window.onload(placeLogin());
