@@ -151,13 +151,16 @@ function checkTheReg() {
         usersWarningModal.remove();
       }
       setTimeout(() => {
-        lgnBox.classList.add('anim');
-        setTimeout(removeLoginModal, 500);
+        login();
       }, 1500);
-      setTimeout(() => {
-        let form = document.getElementById('register');
-        form.submit();
-      }, 1600);
+      // setTimeout(() => {
+      //   lgnBox.classList.add('anim');
+      //   setTimeout(removeLoginModal, 500);
+      // }, 1500);
+      // setTimeout(() => {
+      //   let form = document.getElementById('register');
+      //   form.submit();
+      // }, 1600);
     }
   });
  }
