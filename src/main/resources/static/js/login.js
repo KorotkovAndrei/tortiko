@@ -73,20 +73,16 @@ checkIfLogged();
 
 function usernameCheck(username) {
     if(username != null && username != ""){
-        console.log(username);
-        console.log('yes')
         logoutNav.classList.remove('hide');
         loginNav.classList.add('hide');
     }
 }
 function logoutHandle() {
-    console.log('no')
     loginNav.classList.remove('hide');
     logoutNav.classList.add('hide');
 }
 function responseFromPromiseHandle(response) {
         if (!response.ok) {
-            console.log(response)
             throw Error(response.statusText);
         }
         return response;
@@ -123,8 +119,6 @@ function checkTheReg() {
           'Content-Type': 'application/json',
       }
   }).then(response => response.json()).then(text => {
-    // emailInput.setCustomValidity(`${text.text}`);
-    console.log(text);
     if (text.text == "User already exist, please log in") {
       let warningWindow = document.getElementById("usersBeWarned");
       warningWindow.insertAdjacentHTML('afterbegin', `
@@ -153,14 +147,6 @@ function checkTheReg() {
       setTimeout(() => {
         login();
       }, 1500);
-      // setTimeout(() => {
-      //   lgnBox.classList.add('anim');
-      //   setTimeout(removeLoginModal, 500);
-      // }, 1500);
-      // setTimeout(() => {
-      //   let form = document.getElementById('register');
-      //   form.submit();
-      // }, 1600);
     }
   });
  }
@@ -257,7 +243,6 @@ function deleteCookieEntry(cname) {
       var name = cname + "=";
       var decodedCookie = decodeURIComponent(document.cookie);
       var ca = decodedCookie.split(';');
-      console.log(ca);
       for(var i = 0; i < ca.length; i++) {
         var c = ca[i];
         while (c.charAt(0) == ' ') {
@@ -278,7 +263,6 @@ function checkCookie() {
     if (user != "") {
       return true;
     } else {
-      console.log("nosuchuser");
       user = loginEmail.value;
       if (loginPassword.value) {
           if (user != "" && user != null) {
