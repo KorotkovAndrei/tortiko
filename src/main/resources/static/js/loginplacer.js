@@ -8,7 +8,10 @@ function placelogin() {
           <button type="button"  class="login-toggle-btn" onclick="login()">Log In</button>
           <button type="button"  class="login-toggle-btn" onclick="register()">Register</button>
       </div>
-      <form id="login" class="input-group" action="/login" method="post">
+      <form id="login" class="input-group" action="/login" method="post" onsubmit="usernameCheck(username);return false;>
+        <div id="loginBeWarned">
+
+        </div>
           <input id="username" type="email" name="username" class="input-field" placeholder="Enter E-mail" required>
           <input id="password" type="password" name="password" class="input-field" placeholder="Enter Password" required>
           <input id='inputCheckbox' type="checkbox" class="login-checkbox">

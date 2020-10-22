@@ -9,6 +9,8 @@
   grid-template-rows: 150px 1fr 150px;
   grid-template-columns: 1fr;
   background: #f7f7f7;
+  font-family: 'Raleway', sans-serif;
+
 }
 
 .grid-subdiv-1 {

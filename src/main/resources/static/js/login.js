@@ -25,8 +25,25 @@ checkIfLogged();
 
 function usernameCheck(username) {
     if(username != null && username != ""){
-        logoutNav.classList.remove('hide');
-        loginNav.classList.add('hide');
+
+        // let loginWindow = document.getElementById("loginBeWarned");
+        // loginWindow.insertAdjacentHTML('afterbegin', `
+        // <div id="loginWarningModal" class="login-warning-modal">
+        // <p>${text.text}</p>
+        // <img id="loginExistsCross" src="../static/img/svg/cancel.svg" alt="">
+        // </div>
+        // `);
+        // loginExistsCross.onclick = () => {
+        //   usersWarningModal.remove();
+        // }
+        // setTimeout(function() {
+          // let loginform = document.getElementById('login');
+          // loginform.submit();
+          logoutNav.classList.remove('hide');
+          loginNav.classList.add('hide');
+        // }, 2000);
+
+
     }
 }
 function logoutHandle() {
