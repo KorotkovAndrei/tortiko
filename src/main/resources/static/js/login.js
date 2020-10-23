@@ -51,19 +51,17 @@ var data = new FormData();
               loginPassword.value = '';
               inputCheckbox.checked = false;
               loginWarningModal.remove();
-            }, 1600);
+            }, 2200);
+            location.reload();
           }else{
             let loginWindow = document.getElementById("loginBeWarned");
 
             loginWindow.insertAdjacentHTML('afterbegin', `
             <div id="loginWarningModal" class="users-warning-modal">
-            <p>No such user. Please register!</p>
+            <p>Invalid credentials, please try again</p>
             <img id="loginExistsCross" src="img/svg/cancel.svg" alt="">
             </div>
             `);
-            setTimeout(() => {
-                register();
-            }, 1500);
             setTimeout(() => {
                 loginWarningModal.remove();
             }, 1600);
