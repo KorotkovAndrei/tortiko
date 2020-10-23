@@ -12,7 +12,8 @@ const logoutNav = document.querySelector('.logout-nav');
 const loginNav = document.querySelector('.login-nav');
 
 
-function loginOnSubmit() {
+async function loginOnSubmit() {
+
 //this logic send user credits to validation
 var data = new FormData();
   data.append("username", document.getElementById("username").value);
@@ -20,11 +21,18 @@ var data = new FormData();
   var xhr = new XMLHttpRequest();
   xhr.open("POST", "/login");
   xhr.send(data);
+
+  setTimeout(function() {    //это задержка
   fetch('http://localhost:8080/username',{
           method: 'GET'
       }).then(response => responseFromPromiseHandle(response))
-        .then(res => res.text())
-        .then(username => {
+        .then(
+      function(res) {
+          console.log(res); //это смотреть че ваще происходит 
+          return res.text();
+        }
+      ).then(
+          function(username) {
           console.log(username);
           if(username != null && username != ""){
             let loginWindow = document.getElementById("loginBeWarned");
@@ -38,6 +46,12 @@ var data = new FormData();
               lgnBox.classList.add('anim');
               setTimeout(removeLoginModal, 500);
             }, 1500);
+            setTimeout(() => {
+              loginEmail.value = '';
+              loginPassword.value = '';
+              inputCheckbox.checked = false;
+              loginWarningModal.remove();
+            }, 1600);
           }else{
             let loginWindow = document.getElementById("loginBeWarned");
 
@@ -49,10 +63,14 @@ var data = new FormData();
             `);
             setTimeout(() => {
                 register();
-                loginWarningModal.remove();
             }, 1500);
+            setTimeout(() => {
+                loginWarningModal.remove();
+            }, 1600);
           }
        })
+
+     }, 2000);
 }
 
 
@@ -140,9 +158,20 @@ function checkTheReg() {
       userExistsCross.onclick = () => {
         usersWarningModal.remove();
       }
+      loginEmail.value = '';
+      loginPassword.value = '';
+      inputCheckbox.checked = false;
       setTimeout(() => {
         login();
       }, 1500);
+      setTimeout(() => {
+        emailInput.value = '';
+        passwordInput.value = '';
+        passwordInputConfirm.value = '';
+        registerCheckbox.checked = false;
+        usersWarningModal.remove();
+      }, 1700);
+
     }
   });
  }
