@@ -25,10 +25,32 @@ var data = new FormData();
       }).then(response => responseFromPromiseHandle(response))
         .then(res => res.text())
         .then(username => {
+          console.log(username);
           if(username != null && username != ""){
-          //need to reload page logic here
+            let loginWindow = document.getElementById("loginBeWarned");
+
+            loginWindow.insertAdjacentHTML('afterbegin', `
+            <div id="loginWarningModal" class="login-warning-modal">
+            <p>Welcome to Tortiko!</p>
+            </div>
+            `);
+            setTimeout(() => {
+              lgnBox.classList.add('anim');
+              setTimeout(removeLoginModal, 500);
+            }, 1500);
           }else{
-          //need to show popup logic here
+            let loginWindow = document.getElementById("loginBeWarned");
+
+            loginWindow.insertAdjacentHTML('afterbegin', `
+            <div id="loginWarningModal" class="users-warning-modal">
+            <p>No such user. Please register!</p>
+            <img id="loginExistsCross" src="img/svg/cancel.svg" alt="">
+            </div>
+            `);
+            setTimeout(() => {
+                register();
+                loginWarningModal.remove();
+            }, 1500);
           }
        })
 }
