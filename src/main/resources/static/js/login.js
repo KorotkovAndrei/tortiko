@@ -11,54 +11,28 @@ const registerSubmitButton = document.getElementById('register-btn');
 const logoutNav = document.querySelector('.logout-nav');
 const loginNav = document.querySelector('.login-nav');
 
+
 function loginOnSubmit() {
-
-  const bodyRegister = {
-      username: loginEmail.value,
-      password: loginPassword.value,
-  };
-  fetch('http://localhost:8080/api/users/create-user', {
-      method: 'POST',
-      body: JSON.stringify(bodyRegister),
-      headers: {
-          'Content-Type': 'application/json',
-      }
-  }).then(response => response.json()).then(text => {
-    if (text.text == "User already exist, please log in") {
-
-      let loginWindow = document.getElementById("loginBeWarned");
-
-      loginWindow.insertAdjacentHTML('afterbegin', `
-      <div id="loginWarningModal" class="login-warning-modal">
-      <p>Welcome to Tortiko!</p>
-      </div>
-      `);
-      setTimeout(() => {
-        lgnBox.classList.add('anim');
-        setTimeout(removeLoginModal, 500);
-      }, 1500);
-      setTimeout(() => {
-        let loginform = document.getElementById('login');
-        loginform.submit();
-      }, 1600);
-
-    } else {
-
-      let loginWindow = document.getElementById("loginBeWarned");
-
-      loginWindow.insertAdjacentHTML('afterbegin', `
-      <div id="loginWarningModal" class="users-warning-modal">
-      <p>No such user. Please register!</p>
-      <img id="loginExistsCross" src="img/svg/cancel.svg" alt="">
-      </div>
-      `);
-      setTimeout(() => {
-          register();
-          loginWarningModal.remove();
-      }, 1500);
-    }
-  });
+//this logic send user credits to validation
+var data = new FormData();
+  data.append("username", document.getElementById("username").value);
+  data.append("password", document.getElementById("password").value);
+  var xhr = new XMLHttpRequest();
+  xhr.open("POST", "/login");
+  xhr.send(data);
+  fetch('http://localhost:8080/username',{
+          method: 'GET'
+      }).then(response => responseFromPromiseHandle(response))
+        .then(res => res.text())
+        .then(username => {
+          if(username != null && username != ""){
+          //need to reload page logic here
+          }else{
+          //need to show popup logic here
+          }
+       })
 }
+
 
 function checkIfLogged() {
     fetch('http://localhost:8080/username',{
