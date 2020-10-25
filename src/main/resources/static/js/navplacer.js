@@ -37,4 +37,4 @@ function placeNavbar() {
   `)
 }
 
-window.onload(placeNavbar());
+window.addEventListener("onload", placeNavbar());

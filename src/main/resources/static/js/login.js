@@ -12,31 +12,43 @@ const logoutNav = document.querySelector('.logout-nav');
 const loginNav = document.querySelector('.login-nav');
 
 
-async function loginOnSubmit() {
 
 //this logic send user credits to validation
-var data = new FormData();
-  data.append("username", document.getElementById("username").value);
-  data.append("password", document.getElementById("password").value);
+
+
+function loginOnSubmit() {
+
+  loadlogplaceholder.insertAdjacentHTML('afterbegin', `
+  <img id="loadingLogin" class="loading-login" src="img/svg/waiting.svg" alt="">
+  `);
+  loadpassplaceholder.insertAdjacentHTML('afterbegin', `
+  <img id="loadingPassword" class="loading-password" src="img/svg/waiting.svg" alt="">
+  `);
+
+  var formData = new FormData();
+  let usernamevalue = username.value;
+  let passwordvalue = password.value;
+  formData.append('username', usernamevalue);
+  formData.append('password', passwordvalue);
   var xhr = new XMLHttpRequest();
   xhr.open("POST", "/login");
-  xhr.send(data);
+  xhr.send(formData);
 
-  setTimeout(function() {    //это задержка
-  fetch('http://localhost:8080/username',{
-          method: 'GET'
-      }).then(response => responseFromPromiseHandle(response))
-        .then(
-      function(res) {
-          console.log(res); //это смотреть че ваще происходит 
-          return res.text();
-        }
-      ).then(
-          function(username) {
+  let c = 0;
+  setInterval(() => {
+    c++;
+    if (c == 2) {
+      loadlogplaceholder.remove();
+      loadpassplaceholder.remove();
+      fetch('http://localhost:8080/username',{
+            method: 'GET'
+      })
+        .then(response => responseFromPromiseHandle(response))
+        .then(res => res.text())
+        .then(function(username) {
           console.log(username);
-          if(username != null && username != ""){
+          if (username != null && username != "") {
             let loginWindow = document.getElementById("loginBeWarned");
-
             loginWindow.insertAdjacentHTML('afterbegin', `
             <div id="loginWarningModal" class="login-warning-modal">
             <p>Welcome to Tortiko!</p>
@@ -51,11 +63,10 @@ var data = new FormData();
               loginPassword.value = '';
               inputCheckbox.checked = false;
               loginWarningModal.remove();
+              location.reload();
             }, 2200);
-            location.reload();
-          }else{
+          } else {
             let loginWindow = document.getElementById("loginBeWarned");
-
             loginWindow.insertAdjacentHTML('afterbegin', `
             <div id="loginWarningModal" class="users-warning-modal">
             <p>Invalid credentials, please try again</p>
@@ -63,13 +74,28 @@ var data = new FormData();
             </div>
             `);
             setTimeout(() => {
-                loginWarningModal.remove();
+              loginWarningModal.remove();
             }, 1600);
           }
-       })
 
-     }, 2000);
+      })
+      .catch(function(error) {
+      console.log(error);
+      });
+    }
+  }, 1000)
 }
+
+
+
+function responseFromPromiseHandle(response) {
+        if (!response.ok) {
+            throw Error(response.statusText);
+        }
+        return response;
+    }
+
+
 
 
 function checkIfLogged() {
@@ -93,12 +119,7 @@ function logoutHandle() {
     loginNav.classList.remove('hide');
     logoutNav.classList.add('hide');
 }
-function responseFromPromiseHandle(response) {
-        if (!response.ok) {
-            throw Error(response.statusText);
-        }
-        return response;
-    }
+
 //test case end
 
 function validateRegistration(){

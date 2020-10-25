@@ -363,3 +363,24 @@ span{
     opacity: 1;
   }
 }
+
+.loading-login {
+  position: absolute;
+  right: 5px;
+  top: 20px;
+  width: 15px;
+  height: 15px;
+  animation: spin 4s linear infinite;
+}
+
+.loading-password {
+  position: absolute;
+  right: 5px;
+  top: 68px;
+  width: 15px;
+  height: 15px;
+  animation: spin 4s linear infinite;
+}
+
+
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }

@@ -13,7 +13,13 @@ function placeLogin() {
 
         </div>
           <input id="username" type="email" name="username" class="input-field" placeholder="Enter E-mail" required>
+          <div id="loadlogplaceholder">
+
+          </div>
           <input id="password" type="password" name="password" class="input-field" placeholder="Enter Password" required>
+          <div id="loadpassplaceholder">
+
+          </div>
           <input id='inputCheckbox' type="checkbox" class="login-checkbox">
           <span>Remember Password</span>
           <button id="login-btn" type="submit" class="submit-btn">Log in</button>
@@ -31,7 +37,8 @@ function placeLogin() {
       </form>
   </div>
 
+
   `)
 }
 
-window.onload(placeLogin());
+window.addEventListener("onload", placeLogin());
