@@ -14,10 +14,12 @@ function placeLogin() {
         </div>
           <input id="username" type="email" name="username" class="input-field" placeholder="Enter E-mail" required>
           <div id="loadlogplaceholder">
+          <img id="loadingLogin" class="loading-login off" src="img/svg/waiting.svg" alt="">
 
           </div>
           <input id="password" type="password" name="password" class="input-field" placeholder="Enter Password" required>
           <div id="loadpassplaceholder">
+          <img id="loadingPassword" class="loading-password off" src="img/svg/waiting.svg" alt="">
 
           </div>
           <input id='inputCheckbox' type="checkbox" class="login-checkbox">

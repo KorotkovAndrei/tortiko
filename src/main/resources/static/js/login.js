@@ -18,12 +18,12 @@ const loginNav = document.querySelector('.login-nav');
 
 function loginOnSubmit() {
 
-  loadlogplaceholder.insertAdjacentHTML('afterbegin', `
-  <img id="loadingLogin" class="loading-login" src="img/svg/waiting.svg" alt="">
-  `);
-  loadpassplaceholder.insertAdjacentHTML('afterbegin', `
-  <img id="loadingPassword" class="loading-password" src="img/svg/waiting.svg" alt="">
-  `);
+  let logloginicon = document.querySelector('#loadingLogin');
+  let passloginicon = document.querySelector('#loadingPassword');
+  if (logloginicon.classList.contains('off')) {
+    logloginicon.classList.toggle('off');
+    passloginicon.classList.toggle('off');
+  }
 
   var formData = new FormData();
   let usernamevalue = username.value;
@@ -35,11 +35,11 @@ function loginOnSubmit() {
   xhr.send(formData);
 
   let c = 0;
-  setInterval(() => {
+  let timerId = setInterval(() => {
     c++;
-    if (c == 2) {
-      loadlogplaceholder.remove();
-      loadpassplaceholder.remove();
+    if (c >= 2) {
+      logloginicon.classList.toggle('off');
+      passloginicon.classList.toggle('off');
       fetch('http://localhost:8080/username',{
             method: 'GET'
       })
@@ -82,6 +82,7 @@ function loginOnSubmit() {
       .catch(function(error) {
       console.log(error);
       });
+      clearInterval(timerId);
     }
   }, 1000)
 }
