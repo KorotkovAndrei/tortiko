@@ -7,6 +7,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import javax.persistence.*;
 import java.util.Collection;
 
+import static com.example.tortiko.model.Role.USER;
 
 @Entity
 @Table(name="users", schema = "public")
@@ -20,6 +21,14 @@ public class User implements UserDetails {
 
     @Column(name = "password")
     private String password;
+
+    @Column(name = "user_role")
+    @Enumerated(EnumType.STRING)
+    private Role role;
+
+    public User() {
+        this.role = USER;
+    }
 
     @Override
     public boolean isAccountNonExpired() {
@@ -68,5 +77,13 @@ public class User implements UserDetails {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public Role getRols() {
+        return role;
+    }
+
+    public void setRole(Role role) {
+        this.role = role;
     }
 }
