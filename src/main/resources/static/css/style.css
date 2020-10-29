@@ -33,11 +33,6 @@ nav{
 }
 
 .nav-links a{
-  -webkit-transform: skewX(15deg);
-  -moz-transform: skewX(15deg);
-  -ms-transform: skewX(15deg);
-  -o-transform: skewX(15deg);
-  transform: skewX(15deg);
    color: rgb(226, 226, 226);
    text-decoration: none;
    letter-spacing: 3px;
@@ -45,14 +40,22 @@ nav{
 }
 
 .nav-links li{
-
-  transform: skewX(-15deg);
   padding: 5px;
   display: flex;
    list-style: none;
    min-height: 8vh;
    align-items: center;
+      cursor: pointer;
 }
+
+
+.line {
+  background: #9e1515;
+  position: absolute;
+  transition-property: left, right, width;
+  transition-duration: 0.2s;
+}
+
 
 .burger{
     display: none;
@@ -97,6 +100,9 @@ nav{
     .burger{
         display: block;
     }
+    .line {
+      display: none;
+    }
 }
 
 .nav-active{
@@ -124,11 +130,11 @@ nav{
 }
 
 #showcase{
-    background-image:  linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)), url("../img/background.jpg");
+    background-image: url("../img/background2.jpg");
     height: 92vh;
     background-position: center;
     background-size: cover;
-    color: rgb(226, 226, 226);
+    color: #DD9886;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -146,10 +152,10 @@ nav{
     margin-bottom: 30px;
 }
 #showcase .button{
-    font-size: 18px;
+    font-size: 14px;
     text-decoration: none;
-    padding: 10px 20px;
-    background: linear-gradient(to right, #DB7F67, #FCD757);
+    padding: 10px 40px;
+    background: linear-gradient(to right, #DD9886, #F2D2B3);
     border-radius: 30px;
     transition: .5s;
     color: black;
@@ -161,6 +167,142 @@ nav{
     margin-right: 15%;
 }
 
+
+.about-us {
+  height: 100vh;
+  display: flex;
+}
+.about-us-left{
+  width: 50%;
+  background-image: url("../img/background3.jpg");
+  background-position: center;
+  background-size: cover;
+}
+.about-us-right{
+  width: 50%;
+  color: #F7E2BF;
+  padding: 170px;
+  padding-top: 100px;
+  padding-bottom: 200px;
+  background: #DD9886;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.about-us-right h2{
+  font-size: 36px;
+  text-align: center;
+}
+.about-us-right p{
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.products {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  background: #F8F4F4;
+  padding: 200px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  color: #DD9886;
+}
+.prod-line-one {
+  text-align: center;
+  font-size: 32px;
+}
+.prod-line-two {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.prod-line-two > div {
+  width: 200px;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.1);
+}
+.prod-elem-desc {
+  padding: 15px;
+}
+.prod-elem-desc p {
+  padding-top: 5px;
+  font-size: 14px;
+}
+
+.products img {
+  border-radius: 15px 15px 0px 0px;
+  height: 200px;
+  width: 200px;
+}
+.prod-line-three {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+.prod-line-three div{
+  font-size: 14px;
+  text-decoration: none;
+  padding: 10px 40px;
+  background: linear-gradient(to right, #DD9886, #F2D2B3);
+  border-radius: 30px;
+  transition: .5s;
+  color: black;
+  box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.1);
+
+}
+.prod-line-three a {
+  text-decoration: none;
+  color: black;
+}
+
+.benefits {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  background: #DD9886;
+  padding: 200px;
+  padding-top: 50px;
+  padding-bottom: 100px;
+  color: #F7E2BF;
+
+}
+.benefits-line-one {
+  text-align: center;
+  font-size: 32px;
+}
+.benefits-line-two {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.benefits-line-two > div {
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.benefits-elem-desc p {
+  padding-top: 5px;
+  font-size: 14px;
+}
+
+.benefits img {
+  border-radius: 15px 15px 0px 0px;
+  height: 250px;
+  width: 250px;
+}
+
+.contacts {
+  height: 100vh;
+  background: #F8F4F4;
+
+
+}
 /* переключатель стилей */
 
 .off {

@@ -2,25 +2,27 @@ function placeNavbar() {
   let navbar = document.getElementById("nav-placeholder");
   navbar.insertAdjacentHTML('afterbegin', `
 
-  <nav>
-      <div class="logo">
+  <div id="line" class="line">
+  </div>
+  <nav id="navigationbar">
+      <div  class="logo">
           <h4>TORTIKO</h4>
       </div>
-      <ul class="nav-links">
-          <li>
-              <a href="#">Home</a>
+      <ul id="nav-links" class="nav-links">
+          <li id="home" class="home">
+              <a  href="/index.html">Home</a>
           </li>
-          <li>
-              <a href="#">About</a>
+          <li id="about" class="about">
+              <a  href="#">About</a>
           </li>
-          <li class="shop">
+          <li id="shop" class="shop">
               <a  href="/shop.html">Shop</a>
           </li>
-          <li>
+          <li id="contact"  class="contact">
               <a href="#">Contact</a>
           </li>
           <li></li>
-          <li>
+          <li id="logine">
               <a class="login-nav" id='lgnButton'>Login</a>
           </li>
           <li>
