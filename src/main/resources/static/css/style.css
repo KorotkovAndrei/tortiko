@@ -45,7 +45,8 @@ nav{
    list-style: none;
    min-height: 8vh;
    align-items: center;
-      cursor: pointer;
+   cursor: pointer;
+   font-size: 18px;
 }
 
 
@@ -190,7 +191,7 @@ nav{
   justify-content: space-between;
 }
 .about-us-right h2{
-  font-size: 36px;
+  font-size: 28px;
   text-align: center;
 }
 .about-us-right p{
@@ -211,7 +212,7 @@ nav{
 }
 .prod-line-one {
   text-align: center;
-  font-size: 32px;
+  font-size: 28px;
 }
 .prod-line-two {
   display: flex;
@@ -272,7 +273,7 @@ nav{
 }
 .benefits-line-one {
   text-align: center;
-  font-size: 32px;
+  font-size: 28px;
 }
 .benefits-line-two {
   display: flex;
@@ -300,8 +301,108 @@ nav{
 .contacts {
   height: 100vh;
   background: #F8F4F4;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 200px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  color: #DD9886;
+  background: #F8F4F4;
+}
+.contacts p, li {
+  font-size: 12px;
+  line-height: 1.5;
+}
 
+.contacts-line-one {
+  font-size: 28px;
+  text-align: center;
+}
 
+.contacts-line-two {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  height: 55vh;
+}
+.cont-info {
+  background: #F7E2BF;
+  padding: 50px;
+  border-radius: 15px 0px 0px 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.icons{
+  width: 50%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.circly-thingy-icons {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #DD9886;
+}
+.text-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  background: white;
+  width: 70%;
+  padding: 50px;
+  border-radius: 0px 15px 15px 0px;
+}
+.text-info input {
+  border: none;
+  border-radius: 10px;
+  background: #F8F4F4;
+  height: 24px;
+}
+.text-info-second-line {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.text-info-second-line input{
+  width: 100%;
+}
+.text-info-sl-mail {
+  width: 45%;
+}
+.text-info-sl-phone {
+  width: 45%;
+}
+.text-info-third-line, .text-info-first-line{
+  display: flex;
+  flex-direction: column;
+}
+.text-info-first-line input{
+  width: 100%;
+
+}
+.text-info-third-line input{
+  height: 70px;
+}
+.text-info-third-line button{
+  font-size: 14px;
+  border: none;
+  padding: 10px 40px;
+  background: linear-gradient(to right, #DD9886, #F2D2B3);
+  border-radius: 30px;
+  color: black;
+  margin-top: 10px;
+  width: 40%;
+  align-self: center;
+}
+footer {
+  font-size: 8px;
+  color: black;
+}
+.icons {
+  list-style: none;
 }
 /* переключатель стилей */
 
