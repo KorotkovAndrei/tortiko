@@ -1,9 +1,4 @@
 
-
-.shop {
-  background: #c73636;
-}
-
 .shop-container {
   display: grid;
   grid-template-rows: 150px 1fr 150px;

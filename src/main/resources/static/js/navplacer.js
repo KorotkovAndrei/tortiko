@@ -6,20 +6,21 @@ function placeNavbar() {
   </div>
   <nav id="navigationbar">
       <div  class="logo">
-          <h4>TORTIKO</h4>
+
+          <a href="/index.html"><h4 >TORTIKO</h4></a>
       </div>
       <ul id="nav-links" class="nav-links">
           <li id="home" class="home">
               <a  href="/index.html">Home</a>
           </li>
           <li id="about" class="about">
-              <a  href="#">About</a>
+              <a  href="/index.html#about-us">About</a>
           </li>
           <li id="shop" class="shop">
               <a  href="/shop.html">Shop</a>
           </li>
           <li id="contact"  class="contact">
-              <a href="#">Contact</a>
+              <a href="/index.html#contacts">Contact</a>
           </li>
           <li></li>
           <li id="logine">
