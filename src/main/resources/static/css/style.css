@@ -140,7 +140,7 @@ nav{
 
 #showcase{
     background-image: url("../img/background2.jpg");
-    height: 92vh;
+    height: 100vh;
     background-position: center;
     background-size: cover;
     color: #DD9886;
@@ -191,20 +191,22 @@ nav{
   width: 50%;
   color: #F7E2BF;
   padding: 170px;
-  padding-top: 100px;
-  padding-bottom: 200px;
+;
+  padding-top: 10vh;
+  padding-bottom: 10vh;
   background: #DD9886;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 .about-us-right h2{
   font-size: 28px;
   text-align: center;
 }
-.about-us-right p{
+.about-us-right-descr{
   font-size: 14px;
   line-height: 1.7;
+  min-width: 330px;
 }
 
 .products {
@@ -214,8 +216,8 @@ nav{
   justify-content: space-around;
   background: #F8F4F4;
   padding: 200px;
-  padding-top: 50px;
-  padding-bottom: 50px;
+  padding-top: 10vh;
+  padding-bottom: 10vh;
   color: #DD9886;
 }
 .prod-line-one {
@@ -274,8 +276,8 @@ nav{
   justify-content: space-around;
   background: #DD9886;
   padding: 200px;
-  padding-top: 50px;
-  padding-bottom: 100px;
+  padding-top: 10vh;
+  padding-bottom: 10vh;
   color: #F7E2BF;
 
 }
@@ -307,14 +309,14 @@ nav{
 }
 
 .contacts {
-  height: 100vh;
+  min-height: 100vh;
   background: #F8F4F4;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   padding: 200px;
-  padding-top: 50px;
-  padding-bottom: 50px;
+  padding-top: 10vh;
+  padding-bottom: 10vh;
   color: #DD9886;
   background: #F8F4F4;
 }
@@ -327,20 +329,44 @@ nav{
   font-size: 28px;
   text-align: center;
 }
-
+.cont-info-first-line{
+  background: #F7E2BF;
+  padding: 50px;
+  padding-bottom: 0px;
+  border-radius: 15px 0px 0px 0px;
+}
+.text-info-first-line{
+  background: white;
+  padding: 50px;
+  padding-bottom: 0px;
+  border-radius: 0px 15px 0px 0px;
+}
 .contacts-line-two {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
-  height: 55vh;
+  justify-content: center;
+  width: 840px;
+  align-self: center;
 }
-.cont-info {
-  background: #F7E2BF;
-  padding: 50px;
-  border-radius: 15px 0px 0px 15px;
+.contacts-form-right{
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  width: 70%;
+
+}
+.contacts-form-left{
+  display: flex;
+  flex-direction: column;
+}
+
+.cont-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: #F7E2BF;
+  padding: 50px;
+  border-radius: 0px 0px 0px 15px;
+  height: 273px;
 }
 .icons{
   width: 50%;
@@ -359,22 +385,21 @@ nav{
   flex-direction: column;
   justify-content: space-around;
   background: white;
-  width: 70%;
   padding: 50px;
-  border-radius: 0px 15px 15px 0px;
+  padding-top: 15px;
+  border-radius: 0px 0px 15px 0px;
 }
 .text-info input {
   border: none;
   border-radius: 10px;
   background: #F8F4F4;
-  height: 24px;
 }
-.text-info-second-line {
+.text-info-third-line {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
-.text-info-second-line input{
+.text-info-third-line input{
   width: 100%;
 }
 .text-info-sl-mail {
@@ -383,18 +408,18 @@ nav{
 .text-info-sl-phone {
   width: 45%;
 }
-.text-info-third-line, .text-info-first-line{
+.text-info-fourth-line, .text-info-sec-line{
   display: flex;
   flex-direction: column;
 }
-.text-info-first-line input{
+.text-info-sec-line input{
   width: 100%;
 
 }
-.text-info-third-line input{
+.text-info-fourth-line input{
   height: 70px;
 }
-.text-info-third-line button{
+.text-info-fourth-line button{
   font-size: 14px;
   border: none;
   padding: 10px 40px;
@@ -405,7 +430,7 @@ nav{
   width: 40%;
   align-self: center;
 }
-footer {
+.footer {
   font-size: 8px;
   color: black;
 }
