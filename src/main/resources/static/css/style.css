@@ -21,9 +21,7 @@ nav{
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 4px 20px 0 rgba(0, 0, 0, 0.12);
 
 }
-html {
-  scroll-behavior: smooth;
-}
+
 .logo{
     color: rgb(226, 226, 226);
     text-transform: uppercase;
