@@ -1,5 +1,6 @@
 
 .shop-container {
+  padding-top: 10vh;
   display: grid;
   grid-template-rows: 150px 1fr 150px;
   grid-template-columns: 1fr;
@@ -13,11 +14,13 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
-  /* border: 1px solid red; */
   padding: 10px;
   text-align: center;
   background: #f7f7f7;
-  color: black;
+  color: #DD9886;
+}
+.grid-subdiv-1 h2{
+  font-size: 30px;
 }
 .grid-subdiv-1 p {
   width: 80%;
@@ -33,16 +36,24 @@
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
   grid-gap: 0.7vh;
+  grid-row-gap: 8vh;
   justify-items: center;
   align-items: center;
   justify-self: center;
+  padding-bottom: 8vh;
 
 }
 
 .shopping-card-container {
   width: 250px;
+  background: white;
+  box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.1);
+  border-radius: 10px;
 }
-
+.shopping-card-container > img{
+  width: 250px;
+    border-radius: 10px 10px 0px 0px;
+}
 
 
 @media screen and (max-width: 952px) {
@@ -125,8 +136,6 @@
 
 
 .grid-subdiv-3 div {
-  display: flex;
-  justify-content: center;
   font-size: 14px;
   text-align: center;
   border-radius: 10px;
@@ -137,26 +146,61 @@
   height: 20px;
 }
 .shopping-card-info {
+  width: 100%;
   display: flex;
   flex-direction: column;
-}
-
-.shopping-card-info p {
-  padding-top: 10px;
-  padding-bottom: 10px;
-  text-decoration: none;
-  color: black;
-
-}
-
-.shopping-card-price {
-  display: flex;
-  flex-direction: row;
   justify-content: space-between;
-  align-items: center;
-  padding: 0;
+}
+.shopping-card-info h2 {
+
+  color: #DD9886;
+}
+.shopping-card-header{
+  padding: 10px;
+
+}
+.shopping-card-header h2{
+
+  text-align: left;
+}
+.shopping-card-price-section_one{
+  display: flex;
+  width: 80%;
+  justify-content: space-between;
+  padding: 10px;
+  padding-left: 15px;
+
+}
+.shopping-card-price-section_one button{
+  outline: none;
+  border-radius: 30px;
+  padding: 4px;
+  background-color: white;
+  border: 2px solid #db7f67;
+  font-weight: 600;
+  color: #db7f67;
+  font-size: 11px;
+  cursor: pointer;
+}
+.shopping-card-price-section_two{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+
+}
+.shopping-card-price-section_two button{
+  width: 50%;
+  border-radius: 30px;
+  border: none;
+  padding: 5px;
+  padding-left: 15px;
+    padding-right: 15px;
+    background: linear-gradient(to right, #DD9886, #F2D2B3);
+  font-weight: 400;
+  cursor: pointer;
+
 }
 .p-price {
   font-weight: bold;
-  font-size: 16px;
+  font-size: 20px;
 }
