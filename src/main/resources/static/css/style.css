@@ -63,6 +63,7 @@ nav{
   position: absolute;
   transition-property: left, right, width;
   transition-duration: 0.2s;
+  z-index: 999999999999999;
 }
 
 
