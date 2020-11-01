@@ -60,10 +60,10 @@ nav{
 
 .line {
   background: #9e1515;
-  position: absolute;
+  position: fixed;
   transition-property: left, right, width;
   transition-duration: 0.2s;
-  z-index: 999999999999999;
+  z-index: 8;
 }
 
 
@@ -263,7 +263,9 @@ nav{
   transition: .5s;
   color: black;
   box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.1);
-
+}
+.to-shop-button:active{
+    background: linear-gradient(to right, #c98b7b, #d9bca0);
 }
 .prod-line-three a {
   text-decoration: none;
@@ -310,7 +312,7 @@ nav{
 }
 
 .contacts {
-  min-height: 100vh;
+  height: 100vh;
   background: #F8F4F4;
   display: flex;
   flex-direction: column;
@@ -328,6 +330,7 @@ nav{
 
 .contacts-line-one {
   font-size: 28px;
+  padding-top: 10vh;
   text-align: center;
 }
 .cont-info-first-line{
@@ -339,6 +342,7 @@ nav{
 .text-info-first-line{
   background: white;
   padding: 50px;
+  height: 94px;
   padding-bottom: 0px;
   border-radius: 0px 15px 0px 0px;
 }
@@ -367,7 +371,7 @@ nav{
   background: #F7E2BF;
   padding: 50px;
   border-radius: 0px 0px 0px 15px;
-  height: 273px;
+  height: 287px;
 }
 .icons{
   width: 50%;
@@ -375,11 +379,23 @@ nav{
   flex-direction: row;
   justify-content: space-between;
 }
+.infos{
+  list-style: none;
+}
+.infos svg {
+  margin-right: 5px;
+  width: 10px;
+  height: 10px;
+  fill: #DB7F67;
+}
 .circly-thingy-icons {
   width: 30px;
   height: 30px;
   border-radius: 50%;
-  background: #DD9886;
+
+}
+.circly-thingy-icons svg{
+  fill: #DB7F67;
 }
 .text-info {
   display: flex;
@@ -393,6 +409,7 @@ nav{
 .text-info input {
   border: none;
   border-radius: 10px;
+  padding: 5px;
   background: #F8F4F4;
 }
 .text-info-third-line {
@@ -417,8 +434,13 @@ nav{
   width: 100%;
 
 }
-.text-info-fourth-line input{
+.text-info-fourth-line textarea{
   height: 70px;
+  border: none;
+  background: #F8F4F4;
+     resize: none;
+     padding: 5px;
+     border-radius: 10px;
 }
 .text-info-fourth-line button{
   font-size: 14px;
@@ -430,6 +452,11 @@ nav{
   margin-top: 10px;
   width: 40%;
   align-self: center;
+  cursor: pointer;
+}
+.text-info-fourth-line button:active {
+  background: linear-gradient(to right, #c98b7b, #d9bca0);
+  outline: none;
 }
 .footer {
   font-size: 8px;
@@ -437,6 +464,9 @@ nav{
 }
 .icons {
   list-style: none;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
 }
 /* переключатель стилей */
 
@@ -458,6 +488,7 @@ nav{
 /* тёмный задний фон */
 
 .darken {
+  z-index: 9;
   content: '';
   position: fixed;
   top: 0;
@@ -489,19 +520,22 @@ nav{
 .login-form-box{
     width: 380px;
     height: 480px;
-    position: absolute;
+    position: fixed;
+    margin-top: 8vh;
     left:50%;
     margin-left:-190px;
     background: #fff;
     padding: 5px;
     overflow: hidden;
-    z-index: 9;
+    z-index: 10;
+    border-radius: 10px;
 }
 .login-button-box{
     width: 220px;
     margin: 35px auto;
     position: relative;
-    box-shadow: 0 0 20px 9px #FDF5D8;
+    /* box-shadow: 0 0 20px 9px #FDF5D8; */
+    background: #F8F4F4;
     border-radius: 30px;
 }
 .login-toggle-btn{
@@ -521,7 +555,7 @@ nav{
     position: absolute;
     width: 110px;
     height: 100%;
-    background: linear-gradient(to right, #DB7F67, #FCD757);
+    background: linear-gradient(to right, #DD9886, #F2D2B3);
     border-radius: 30px;
     transition: .5s;
 }
@@ -544,13 +578,13 @@ nav{
     background: transparent;
 }
 .submit-btn{
-    width: 85%;
+    width: 55%;
     padding: 10px 30px;
     cursor: pointer;
     display: block;
     margin: auto;
 
-    background: linear-gradient(to right, #DB7F67, #FCD757);
+    background: linear-gradient(to right, #DD9886, #F2D2B3);
     border: 0;
     outline: none;
     border-radius: 30px;
