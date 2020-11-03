@@ -31,17 +31,24 @@ window.addEventListener("keydown", function (evt) {
 let targid;
 
 function prepositiontheline() {
-  let title = document.title;
-  let home = document.querySelector('#home');
-  let homecoords = home.getBoundingClientRect();
-  if (title == 'Tortiko') {
-      line.style.width = home.clientWidth + 'px';
-      line.style.height = '2px';
-      line.style.left = homecoords.left + 'px';
-      line.style.top = homecoords.y + homecoords.height - 2 + 'px';
+  let title = document.title.toLowerCase();
+  let home;
+  if (title == 'tortiko') {
+    home = document.querySelector('#home');
+    let homecoords = home.getBoundingClientRect();
+    line.style.width = home.clientWidth + 'px';
+    line.style.height = '2px';
+    line.style.left = homecoords.left + 'px';
+    line.style.top = homecoords.y + homecoords.height - 2 + 'px';
+  } else {
+    home = document.querySelector(`#${title}`);
+    let homecoords = home.getBoundingClientRect();
+    line.style.width = home.clientWidth + 'px';
+    line.style.height = '2px';
+    line.style.left = homecoords.left + 'px';
+    line.style.top = homecoords.y + homecoords.height - 2 + 'px';
   }
   targid = home.id;
-
 }
 prepositiontheline();
 
