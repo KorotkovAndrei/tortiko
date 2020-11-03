@@ -29,6 +29,7 @@ window.addEventListener("keydown", function (evt) {
 });
 
 let targid;
+let anchorcoords;
 
 function prepositiontheline() {
   let title = document.title.toLowerCase();
@@ -77,12 +78,15 @@ navigationbar.addEventListener('mouseleave', (e) => {
   setTimeout(() => {prepositiontheline()}, 1000)
 });
 
+document.addEventListener('mouseover', function(event) {
+  anchorcoords = event.target.closest('[data-anchor]');
+});
 
 
 window.onresize = function(event) {
-
   line.style.top = navigationbar.offsetHeight - 2 + 'px';
   let currelem = document.querySelector(`#${targid}`);
   let elempos = currelem.getBoundingClientRect();
   line.style.left = elempos.left + 'px';
+  anchorcoords.scrollIntoView(top);
 };

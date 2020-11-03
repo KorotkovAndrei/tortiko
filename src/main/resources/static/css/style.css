@@ -142,6 +142,7 @@ nav{
 #showcase{
     background-image: url("../img/background2.jpg");
     height: 100vh;
+    min-height: 512px;
     background-position: center;
     background-size: cover;
     color: #DD9886;
@@ -180,6 +181,7 @@ nav{
 
 .about-us {
   height: 100vh;
+    min-height: 512px;
   display: flex;
 }
 .about-us-left{
@@ -212,6 +214,7 @@ nav{
 
 .products {
   height: 100vh;
+    min-height: 512px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -274,6 +277,7 @@ nav{
 
 .benefits {
   height: 100vh;
+    min-height: 512px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -313,6 +317,7 @@ nav{
 
 .contacts {
   height: 100vh;
+    min-height: 512px;
   background: #F8F4F4;
   display: flex;
   flex-direction: column;
