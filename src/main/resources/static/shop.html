@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/shop.css">
+    <link rel="stylesheet" href="css/product.css">
+
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -19,7 +21,7 @@
   </div>
 
 
-  <main class="shop-container">
+  <main id="shop-container-main" class="shop-container">
     <div class="grid-subdiv-1">
       <h2>Shop</h2>
       <p>
@@ -37,12 +39,12 @@
     </div>
     <div class="grid-subdiv-3">
 
-      <section class="shopping-card-container">
-        <img src="img/butterscothc.jpg" alt="">
+      <section id="shop-container-secondary" class="shopping-card-container">
+        <img class="prodpic" src="img/butterscothc.jpg" alt="">
           <section class="shopping-card-info">
 
               <div class="shopping-card-header">
-              <h2>Vanilla cake</h2>
+              <h2 id="shoppingcardname">Vanilla cake</h2>
               </div>
 
               <div class="shopping-card-price-section_one">
@@ -60,11 +62,11 @@
       </section>
 
       <section class="shopping-card-container">
-        <img src="img/butterscothc.jpg" alt="">
+        <img class="prodpic" src="img/butterscothc.jpg" alt="">
           <section class="shopping-card-info">
 
               <div class="shopping-card-header">
-              <h2>Vanilla cake</h2>
+              <h2 id="shoppingcardname">Cocaine cake</h2>
               </div>
 
               <div class="shopping-card-price-section_one">
@@ -81,115 +83,6 @@
           </section>
       </section>
 
-      <section class="shopping-card-container">
-        <img src="img/butterscothc.jpg" alt="">
-          <section class="shopping-card-info">
-
-              <div class="shopping-card-header">
-              <h2>Vanilla cake</h2>
-              </div>
-
-              <div class="shopping-card-price-section_one">
-              <button type="button" name="button">small</button>
-              <button type="button" name="button">medium</button>
-              <button type="button" name="button">large</button>
-              </div>
-
-              <div class="shopping-card-price-section_two">
-              <button type="button" name="button">Add to cart</button>
-              <p class="p-price">£20</p>
-              </div>
-
-          </section>
-      </section>
-
-      <section class="shopping-card-container">
-        <img src="img/butterscothc.jpg" alt="">
-          <section class="shopping-card-info">
-
-              <div class="shopping-card-header">
-              <h2>Vanilla cake</h2>
-              </div>
-
-              <div class="shopping-card-price-section_one">
-              <button type="button" name="button">small</button>
-              <button type="button" name="button">medium</button>
-              <button type="button" name="button">large</button>
-              </div>
-
-              <div class="shopping-card-price-section_two">
-              <button type="button" name="button">Add to cart</button>
-              <p class="p-price">£20</p>
-              </div>
-
-          </section>
-      </section>
-
-      <section class="shopping-card-container">
-        <img src="img/butterscothc.jpg" alt="">
-          <section class="shopping-card-info">
-
-              <div class="shopping-card-header">
-              <h2>Vanilla cake</h2>
-              </div>
-
-              <div class="shopping-card-price-section_one">
-              <button type="button" name="button">small</button>
-              <button type="button" name="button">medium</button>
-              <button type="button" name="button">large</button>
-              </div>
-
-              <div class="shopping-card-price-section_two">
-              <button type="button" name="button">Add to cart</button>
-              <p class="p-price">£20</p>
-              </div>
-
-          </section>
-      </section>
-
-      <section class="shopping-card-container">
-        <img src="img/butterscothc.jpg" alt="">
-          <section class="shopping-card-info">
-
-              <div class="shopping-card-header">
-              <h2>Vanilla cake</h2>
-              </div>
-
-              <div class="shopping-card-price-section_one">
-              <button type="button" name="button">small</button>
-              <button type="button" name="button">medium</button>
-              <button type="button" name="button">large</button>
-              </div>
-
-              <div class="shopping-card-price-section_two">
-              <button type="button" name="button">Add to cart</button>
-              <p class="p-price">£20</p>
-              </div>
-
-          </section>
-      </section>
-
-      <section class="shopping-card-container">
-        <img src="img/butterscothc.jpg" alt="">
-          <section class="shopping-card-info">
-
-              <div class="shopping-card-header">
-              <h2>Vanilla cake</h2>
-              </div>
-
-              <div class="shopping-card-price-section_one">
-              <button type="button" name="button">small</button>
-              <button type="button" name="button">medium</button>
-              <button type="button" name="button">large</button>
-              </div>
-
-              <div class="shopping-card-price-section_two">
-              <button type="button" name="button">Add to cart</button>
-              <p class="p-price">£20</p>
-              </div>
-
-          </section>
-      </section>
 
     </div>
     <div class="grid-subdiv-2">
@@ -197,6 +90,38 @@
     </div>
 
   </main>
+
+  <div id="prodcont" class="product-container off">
+    <div class="grid-col-1">
+      <img id="contimg" th:src="${product.getProductPhotoUrl()}">
+    </div>
+      <div class="grid-row-1">
+         <p id="contpname" th:text="${product.getProductName()}"></p>
+      </div>
+      <div class="grid-row-2">
+        <p id="contpdesc" th:text="${product.getProductDescription()}">
+
+        </p>
+      </div>
+      <div class="grid-row-3">
+        <button type="button" name="button">small</button>
+        <button type="button" name="button">medium</button>
+        <button type="button" name="button">large</button>
+      </div>
+      <div class="grid-row-4">
+        <p>£20</p>
+      </div>
+      <div class="grid-row-5">
+        <div class="plus-minus">
+        <img src="../static/img/minus-button.png" alt="">
+        <p class="number">1</p>
+        <img src="../static/img/plus-button.png" alt="">
+        </div>
+        <div class="add-to-card-btn">
+        <button type="button" name="button">Add to card</button>
+        </div>
+      </div>
+  </div>
 
   <div id=darken class="darken off"></div>
 
