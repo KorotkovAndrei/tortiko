@@ -1,4 +1,5 @@
 .product-container {
+  display: grid;
   width: 70%;
   margin: 0 auto;
   justify-self: center;

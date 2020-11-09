@@ -47,38 +47,6 @@
 
   </main>
 
-  <div id="prodcont" class="product-container off">
-    <div class="grid-col-1">
-      <img id="contimg" th:src="${product.getProductPhotoUrl()}">
-    </div>
-      <div class="grid-row-1">
-         <p id="contpname" th:text="${product.getProductName()}"></p>
-      </div>
-      <div class="grid-row-2">
-        <p id="contpdesc" th:text="${product.getProductDescription()}">
-
-        </p>
-      </div>
-      <div class="grid-row-3">
-        <button type="button" name="button">small</button>
-        <button type="button" name="button">medium</button>
-        <button type="button" name="button">large</button>
-      </div>
-      <div class="grid-row-4">
-        <p>£20</p>
-      </div>
-      <div class="grid-row-5">
-        <div class="plus-minus">
-        <img src="img/minus-button.png" alt="">
-        <p class="number">1</p>
-        <img src="img/plus-button.png" alt="">
-        </div>
-        <div class="add-to-card-btn">
-        <button type="button" name="button">Add to card</button>
-        </div>
-      </div>
-  </div>
-
   <div id=darken class="darken off"></div>
 
 
