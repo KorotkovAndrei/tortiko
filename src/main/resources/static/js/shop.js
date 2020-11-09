@@ -7,21 +7,30 @@ function updateProductsInDom(productList) {
 
 
 function productTemplate({id, productName, productDescription, productPhotoUrl, productPrices }) {
-    return    `<div class="grid-3-elem-9" >
-                <a href="/shop/${id}">
-                    <section class="shopping-card-container">
-                        <img src="${productPhotoUrl}" height=300px width=250px>
-                        <section class="shopping-card-info">
-                            <p>${productName}</p>
-                            <section class="shopping-card-price">
-                                <p class="p-price">${productPrices[0]} $</p>
-                            <img class="grid-shopping-cart-icon" src="img/png/039-shopping-cart.png" alt="">
-                            </section>
-                        </section>
-                    </section>
-                </a>
-            </div>`
-}
+    return `<section id="shop-container-secondary" class="shopping-card-container">
+            <a class="shoplink" href="/shop/${id}">
+            <img class="prodpic" src=${productPhotoUrl} alt="">
+              <section class="shopping-card-info">
+
+                  <div class="shopping-card-header">
+                  <h2 id="shoppingcardname">${productName}</h2>
+                  </div>
+
+                  <div class="shopping-card-price-section_one">
+                  <button type="button" name="button">small</button>
+                  <button type="button" name="button">medium</button>
+                  <button type="button" name="button">large</button>
+                  </div>
+
+                  <div class="shopping-card-price-section_two">
+                  <button type="button" name="button">Add to cart</button>
+                  <p class="p-price">£${productPrices[0]}</p>
+                  </div>
+
+              </section>
+              </a>
+          </section>`
+    }
 function getProducts() {
     fetch('http://localhost:8080/products/getAll',{
         method: 'GET',
