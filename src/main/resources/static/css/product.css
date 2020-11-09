@@ -61,6 +61,7 @@
 .grid-row-3 button:hover {
   background-color: #db7f67;
   color: white;
+  transition-duration: .2s;
 }
 .grid-row-4 {
   grid-area: price;
@@ -70,7 +71,12 @@
   padding: 0px 50px 0px 50px;
 
 }
-
+#imgminus{
+  cursor: pointer;
+}
+#imgplus{
+  cursor: pointer;
+}
 .grid-row-5 {
   grid-area: func;
   display: flex;
@@ -111,8 +117,9 @@
     background: linear-gradient(to right, #DD9886, #F2D2B3);
   font-weight: 600;
   box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.1);
-
-
+}
+.grid-row-5 button:active {
+  background: linear-gradient(to right, #bf8475, #d6ba9f);
 }
 .grid-col-1 img{
   width: 450px;

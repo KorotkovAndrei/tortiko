@@ -187,6 +187,11 @@
   font-size: 11px;
   cursor: pointer;
 }
+.shopping-card-price-section_one button:hover{
+  color: white;
+  background: #db7f67;
+  transition-duration: 0.2s;
+}
 .shopping-card-price-section_two{
     display: flex;
     justify-content: space-between;
