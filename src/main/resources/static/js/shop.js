@@ -1,6 +1,7 @@
 const selectedProduct = document.querySelector('.grid-subdiv-3');
 
 function updateProductsInDom(productList) {
+    console.log(productList);
     selectedProduct.innerHTML = '';
     productList.forEach(({id, productName, productDescription, productPhotoUrl, productPrices }) => selectedProduct.innerHTML += productTemplate({id, productName, productDescription, productPhotoUrl, productPrices }))
 }
@@ -18,14 +19,14 @@ function productTemplate({id, productName, productDescription, productPhotoUrl, 
                   </div>
 
                   <div class="shopping-card-price-section_one">
-                  <button type="button" name="button">small</button>
-                  <button type="button" name="button">medium</button>
-                  <button type="button" name="button">large</button>
+                  <button id="wiuwqw" type="button" name="button">small</button>
+                  <button id="vcvcvc" type="button" name="button">medium</button>
+                  <button id="fwwggr" type="button" name="button">large</button>
                   </div>
 
                   <div class="shopping-card-price-section_two">
                   <button type="button" name="button">Add to cart</button>
-                  <p class="p-price">£${productPrices[0]}</p>
+                  <p class="p-price">£${productPrices[1]}</p>
                   </div>
 
               </section>
@@ -38,6 +39,9 @@ function getProducts() {
           'Content-Type': 'application/json'
         }
         })
-        .then(response => response.json()).then(productList => updateProductsInDom(productList));
+        .then(response => response.json())
+        .then(productList => updateProductsInDom(productList));
+
+
 }
 getProducts();
