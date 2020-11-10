@@ -378,7 +378,7 @@ nav{
   flex-direction: column;
   justify-content: space-between;
   background: #F7E2BF;
-  padding: 50px;
+  padding: 25px 50px 50px 50px;
   border-radius: 0px 0px 0px 15px;
   height: 287px;
 }
@@ -412,7 +412,7 @@ nav{
   justify-content: space-around;
   background: white;
   padding: 50px;
-  padding-top: 15px;
+  padding-top: 4px;
   border-radius: 0px 0px 15px 0px;
 }
 .text-info input {
@@ -458,7 +458,7 @@ nav{
   background: linear-gradient(to right, #DD9886, #F2D2B3);
   border-radius: 30px;
   color: black;
-  margin-top: 10px;
+  margin-top: 20px;
   width: 40%;
   align-self: center;
   cursor: pointer;
@@ -469,7 +469,7 @@ nav{
 }
 .footer {
   font-size: 8px;
-  color: black;
+  color: #333333;
 }
 .icons {
   list-style: none;
@@ -627,7 +627,7 @@ span{
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  color: black;
+  color: #333333;
   border-radius: 10px;
   padding: 10px;
   font-size: 13px;

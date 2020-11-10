@@ -173,13 +173,13 @@
   width: 80%;
   justify-content: space-between;
   padding: 10px;
-  padding-left: 15px;
+  padding-left: 10px;
 
 }
 .shopping-card-price-section_one button{
   outline: none;
   border-radius: 30px;
-  padding: 4px;
+  padding: 6px;
   background-color: white;
   border: 2px solid #db7f67;
   font-weight: 600;
