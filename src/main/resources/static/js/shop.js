@@ -1,7 +1,6 @@
 const selectedProduct = document.querySelector('.grid-subdiv-3');
 
 function updateProductsInDom(productList) {
-    console.log(productList);
     selectedProduct.innerHTML = '';
     productList.forEach(({id, productName, productDescription, productPhotoUrl, productPrices }) => selectedProduct.innerHTML += productTemplate({id, productName, productDescription, productPhotoUrl, productPrices }))
 }
@@ -19,14 +18,17 @@ function productTemplate({id, productName, productDescription, productPhotoUrl, 
                   </div>
 
                   <div class="shopping-card-price-section_one">
-                  <button id="wiuwqw" type="button" name="button">small</button>
-                  <button id="vcvcvc" type="button" name="button">medium</button>
-                  <button id="fwwggr" type="button" name="button">large</button>
+                  <input id=${"smallbtn_" + id} type="radio" name=${"card_" + id} checked>
+                  <label for=${"smallbtn_" + id}>small</label>
+                  <input id=${"mediumbtn_" + id} type="radio" name=${"card_" + id} >
+                  <label for=${"mediumbtn_" + id}>medium</label>
+                  <input id=${"largebtn_" + id} type="radio" name=${"card_" + id} >
+                  <label for=${"largebtn_" + id}>large</label>
                   </div>
 
                   <div class="shopping-card-price-section_two">
                   <button type="button" name="button">Add to cart</button>
-                  <p class="p-price">£${productPrices[1]}</p>
+                  <p id=${"p-price_" + id} class="p-price">£${productPrices[0]}</p>
                   </div>
 
               </section>
