@@ -33,7 +33,3 @@ shopUI.onclick = (event) => {
     }
   }
 }
-
-window.addEventListener("onload", () => {
-
-});
