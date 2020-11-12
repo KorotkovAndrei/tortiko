@@ -1,4 +1,4 @@
-package com.example.tortiko.model;
+package com.example.tortiko.dto;
 
 public class ProductDTO {
     private String productName;

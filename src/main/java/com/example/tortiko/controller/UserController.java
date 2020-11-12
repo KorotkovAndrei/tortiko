@@ -2,7 +2,7 @@ package com.example.tortiko.controller;
 
 import com.example.tortiko.model.ResponseTransfer;
 import com.example.tortiko.model.User;
-import com.example.tortiko.model.UserDTO;
+import com.example.tortiko.dto.UserDTO;
 import com.example.tortiko.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
