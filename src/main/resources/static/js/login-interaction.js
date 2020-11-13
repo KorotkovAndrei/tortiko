@@ -17,6 +17,7 @@ lgnButton.onclick = addLoginModal;
 darken.onclick = () => {
   lgnBox.classList.add('anim');
   setTimeout(removeLoginModal, 500);
+
 }
 window.addEventListener("keydown", function (evt) {
   if (lgnBox.classList.contains('on')) {
