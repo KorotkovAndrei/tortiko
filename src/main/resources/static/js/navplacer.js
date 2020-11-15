@@ -43,21 +43,3 @@ function placeNavbar() {
 }
 
 window.addEventListener("onload", placeNavbar());
-
-let shoppingcart = document.querySelector('.nav-shop-cart');
-let shoppingcartmodal = document.querySelector('.card-t');
-let indexUI = document.querySelector('.index-ui');
-let isshoppingmodalsopened;
-shoppingcart.onclick = () => {
-  shoppingcartmodal.classList.toggle('off');
-  shoppingcartmodal.classList.toggle('flex');
-  isshoppingmodalsopened = true;
-}
-indexUI.onclick = (event) => {
-  if (isshoppingmodalsopened == true) {
-    if (event.target.className != 'card-t' || event.target.className != 'nav-shop-cart') {
-      shoppingcartmodal.classList.toggle('off');
-      shoppingcartmodal.classList.toggle('flex');
-  }
-}
-}

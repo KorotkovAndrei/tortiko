@@ -35,21 +35,25 @@ let anchorcoords;
 function prepositiontheline() {
   let title = document.title.toLowerCase();
   let home;
-  if (title == 'tortiko') {
-    home = document.querySelector('#home');
-    let homecoords = home.getBoundingClientRect();
-    line.style.width = home.clientWidth + 'px';
-    line.style.height = '2px';
-    line.style.left = homecoords.left + 'px';
-    line.style.top = homecoords.y + homecoords.height - 2 + 'px';
-  } else {
-    home = document.querySelector(`#${title}`);
-    let homecoords = home.getBoundingClientRect();
-    line.style.width = home.clientWidth + 'px';
+  function gogoline(v) {
+    let homecoords = v.getBoundingClientRect();
+    line.style.width = v.clientWidth + 'px';
     line.style.height = '2px';
     line.style.left = homecoords.left + 'px';
     line.style.top = homecoords.y + homecoords.height - 2 + 'px';
   }
+  if (title == 'tortiko') {
+    home = document.querySelector('#home');
+    gogoline(home);
+  } else if (title == 'item') {
+    home = document.querySelector(`#shop`);
+    gogoline(home);
+  } else {
+    home = document.querySelector(`#${title}`);
+    gogoline(home);
+  }
+
+
   targid = home.id;
 }
 prepositiontheline();

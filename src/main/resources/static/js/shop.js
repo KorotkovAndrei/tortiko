@@ -14,7 +14,9 @@ function productTemplate({id, productName, productDescription, productPhotoUrl, 
               <section class="shopping-card-info">
 
                   <div class="shopping-card-header">
+                  <a class="shoplink" href="/shop/${id}">
                   <h2 id="shoppingcardname">${productName}</h2>
+                  </a>
                   </div>
 
                   <div class="shopping-card-price-section_one">
