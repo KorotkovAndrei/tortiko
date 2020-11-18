@@ -32,10 +32,10 @@
 
   <div class="product-container">
     <div class="grid-col-1">
-      <img th:src="${product.getProductPhotoUrl()}">
+      <img th:src="${product.getProductPhotoUrl()}" id="productpic_prod">
     </div>
       <div class="grid-row-1">
-         <p th:text="${product.getProductName()}"></p>
+         <p th:text="${product.getProductName()}" id="productname_prod"></p>
       </div>
       <div class="grid-row-2">
         <p th:text="${product.getProductDescription()}">
@@ -44,11 +44,11 @@
       </div>
       <div class="grid-row-3">
         <input id="prodcontbtnsml_1" type="radio" name="product" checked>
-        <label for="prodcontbtnsml_1">small</label>
+        <label id="prod1data" for="prodcontbtnsml_1">small</label>
         <input id="prodcontbtnmed_2" type="radio" name="product" >
-        <label for="prodcontbtnmed_2">medium</label>
+        <label id="prod2data" for="prodcontbtnmed_2">medium</label>
         <input id="prodcontbtnlrg_3" type="radio" name="product" >
-        <label for="prodcontbtnlrg_3">large</label>
+        <label id="prod3data" for="prodcontbtnlrg_3">large</label>
       </div>
       <div class="grid-row-4" id="placetopaste">
         <p th:text="${product.getProductPrices()[0]}" id="uno" class='placeofinterest'></p>
@@ -62,7 +62,7 @@
         <img id="imgplus" src="/img/plus-button.png" alt="">
         </div>
         <div class="add-to-card-btn">
-        <button type="button" name="button">Add to card</button>
+        <button id='addtocart' type="button" name="button">Add to card</button>
         </div>
       </div>
   </div>
@@ -74,7 +74,7 @@
   <script src="/js/mobile-navbar.js" defer></script>
   <script src="/js/product.js" defer></script>
   <script src="/js/cartplacer.js" defer></script>
-
+  <script src="/js/addingpurchases.js" defer></script>
 
 
 </body>

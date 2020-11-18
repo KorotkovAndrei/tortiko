@@ -107,3 +107,63 @@ gridrowthree.onclick = (event) => {
     }
   }
 }
+
+let shoparray = [];
+addtocart.onclick = () => {
+  function getthechecked() {
+    if (prodcontbtnsml_1.checked) {
+      return prod1data.innerHTML;
+    }
+    if (prodcontbtnmed_2.checked) {
+      return prod2data.innerHTML;
+    }
+    if (prodcontbtnlrg_3.checked) {
+      return prod3data.innerHTML;
+    }
+  }
+  let luck = getthechecked();
+  let price = document.querySelector(".placeofinterest");
+  let itemobj = {
+    prodname: productname_prod.innerHTML,
+    price: price.innerHTML,
+    prodsize: luck,
+    prodquantity: imgnumber.innerHTML,
+    prodimg: productpic_prod.src
+  }
+  shoparray.push(itemobj);
+  checkthearray(shoparray);
+}
+
+const checkthearray = (arr) => {
+  if (arr.length > 1) {
+    for (let i = 0; i < arr.length; i++) {
+      if (arr[i].prodname == arr[i+1].prodname) {
+        arr.splice(0, 1);
+        setthedata(arr, i);
+      }
+    }
+  } else {
+    setthedata(arr, 0);
+  }
+}
+const setthedata = (arr, i) => {
+  let stl = localStorage.length;
+  if (stl > 0) {
+      checkthestorage(arr, i, stl);
+  } else {
+    localStorage.setItem(0, [arr[i].prodname, arr[i].price, arr[i].prodsize, arr[i].prodquantity, arr[i].prodimg]);
+    refreshpurchases();
+  }
+}
+
+const checkthestorage = (arr, i, stl) => {
+  if ((localStorage.getItem(stl - 1).split(',')[0]) !== arr[i].prodname) {
+    localStorage.setItem(stl, [arr[i].prodname, arr[i].price, arr[i].prodsize, arr[i].prodquantity, arr[i].prodimg]);
+    refreshpurchases();
+  }
+  if ((localStorage.getItem(stl - 1).split(',')[0]) == arr[i].prodname) {
+    localStorage.removeItem(stl - 1);
+    localStorage.setItem(stl - 1, [arr[i].prodname, arr[i].price, arr[i].prodsize, arr[i].prodquantity, arr[i].prodimg]);
+    refreshpurchases();
+  }
+}
