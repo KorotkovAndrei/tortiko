@@ -44,7 +44,7 @@ const refreshpurchases = () => {
 
 window.addEventListener("onload", refreshpurchases());
 
-const carthandle = (sizebtn1_id, sizebtn2_id, sizebtn3_id, productname_id, price_class, quantity_id, productpic_id) => {
+const carthandle = (sizebtn1_id, sizebtn2_id, sizebtn3_id, productname_id, price_class_or_id, quantity_id, productpic_id) => {
   let shoparray = [];
   let size_1 = document.querySelector(`#${sizebtn1_id}`);
   let size_2 = document.querySelector(`#${sizebtn2_id}`);
@@ -53,13 +53,13 @@ const carthandle = (sizebtn1_id, sizebtn2_id, sizebtn3_id, productname_id, price
   let size_2_lbl = document.querySelector(`#${sizebtn2_id}_lable`);
   let size_3_lbl = document.querySelector(`#${sizebtn3_id}_lable`);
   const handletheprice = () => {
-    let prcls = document.querySelector(`.${price_class}`);
-    let prid = document.querySelector(`#${price_class}`);
+    let prcls = document.querySelector(`.${price_class_or_id}`);
+    let prid = document.querySelector(`#${price_class_or_id}`);
     if (prcls == undefined) {
-      return document.querySelector(`#${price_class}`).innerHTML;
+      return document.querySelector(`#${price_class_or_id}`).innerHTML;
     }
     if (prid == undefined) {
-      return document.querySelector(`.${price_class}`).innerHTML;
+      return document.querySelector(`.${price_class_or_id}`).innerHTML;
     }
   }
   let price = handletheprice();
