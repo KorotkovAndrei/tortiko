@@ -7,29 +7,29 @@ function updateProductsInDom(productList) {
 
 
 function productTemplate({id, productName, productDescription, productPhotoUrl, productPrices }) {
-    return `<section id="shop-container-secondary" class="shopping-card-container">
+    return `<section id="shop-container-secondary_${id}" class="shopping-card-container">
             <a class="shoplink" href="/shop/${id}">
-            <img class="prodpic" src=${productPhotoUrl} alt="">
+            <img class="prodpic" id="shopprodpic_${id}" src=${productPhotoUrl} alt="">
             </a>
               <section class="shopping-card-info">
 
                   <div class="shopping-card-header">
                   <a class="shoplink" href="/shop/${id}">
-                  <h2 id="shoppingcardname">${productName}</h2>
+                  <h2 id="shoppingcardname_${id}">${productName}</h2>
                   </a>
                   </div>
 
                   <div class="shopping-card-price-section_one">
                   <input id=${"smallbtn_" + id} type="radio" name=${"card_" + id} checked>
-                  <label for=${"smallbtn_" + id}>small</label>
+                  <label id=${"smallbtn_" + id + "_lable"} for=${"smallbtn_" + id}>small</label>
                   <input id=${"mediumbtn_" + id} type="radio" name=${"card_" + id} >
-                  <label for=${"mediumbtn_" + id}>medium</label>
+                  <label id=${"mediumbtn_" + id + "_lable"} for=${"mediumbtn_" + id}>medium</label>
                   <input id=${"largebtn_" + id} type="radio" name=${"card_" + id} >
-                  <label for=${"largebtn_" + id}>large</label>
+                  <label id=${"largebtn_" + id + "_lable"} for=${"largebtn_" + id}>large</label>
                   </div>
 
                   <div class="shopping-card-price-section_two">
-                  <button type="button" name="button">Add to cart</button>
+                  <button id="shopaddtocart_${id}" type="button" name="button">Add to cart</button>
                   <p id=${"p-price_" + id} class="p-price">£${productPrices[0]}</p>
                   </div>
 

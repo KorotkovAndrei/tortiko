@@ -12,8 +12,7 @@ const bringmethefood = () => {
 }
 bringmethefood();
 
-
-shopUI.onclick = (event) => {
+const pricesizeshophander = (event) => {
   if (event.target.id.includes("smallbtn") || event.target.id.includes("mediumbtn") || event.target.id.includes("largebtn")) {
     let c = event.target.id;
     let uniqueid = c.slice(c.indexOf('_')+1);
@@ -31,5 +30,13 @@ shopUI.onclick = (event) => {
         }
       }
     }
+  }
+}
+shopUI.onclick = (event) => {
+  pricesizeshophander(event);
+  if (event.target.id.includes("shopaddtocart")) {
+    let c = event.target.id;
+    let x = c.slice(c.indexOf('_')+1);
+    carthandle(`smallbtn_${x}`, `mediumbtn_${x}`, `largebtn_${x}`, `shoppingcardname_${x}`, `p-price_${x}`, `1`, `shopprodpic_${x}`);
   }
 }

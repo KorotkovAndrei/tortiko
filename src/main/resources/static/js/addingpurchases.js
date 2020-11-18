@@ -44,6 +44,92 @@ const refreshpurchases = () => {
 
 window.addEventListener("onload", refreshpurchases());
 
+const carthandle = (sizebtn1_id, sizebtn2_id, sizebtn3_id, productname_id, price_class, quantity_id, productpic_id) => {
+  let shoparray = [];
+  let size_1 = document.querySelector(`#${sizebtn1_id}`);
+  let size_2 = document.querySelector(`#${sizebtn2_id}`);
+  let size_3 = document.querySelector(`#${sizebtn3_id}`);
+  let size_1_lbl = document.querySelector(`#${sizebtn1_id}_lable`);
+  let size_2_lbl = document.querySelector(`#${sizebtn2_id}_lable`);
+  let size_3_lbl = document.querySelector(`#${sizebtn3_id}_lable`);
+  const handletheprice = () => {
+    let prcls = document.querySelector(`.${price_class}`);
+    let prid = document.querySelector(`#${price_class}`);
+    if (prcls == undefined) {
+      return document.querySelector(`#${price_class}`).innerHTML;
+    }
+    if (prid == undefined) {
+      return document.querySelector(`.${price_class}`).innerHTML;
+    }
+  }
+  let price = handletheprice();
+  let productname = document.querySelector(`#${productname_id}`).innerHTML;
+  const handlethequantity = () => {
+    if (quantity_id = '1') {
+      return 1;
+    } else {
+      return document.querySelector(`#${quantity_id}`).innerHTML;
+    }
+  }
+  let prodquantity = handlethequantity();
+  let prodimg = document.querySelector(`#${productpic_id}`).src;
+  function getthechecked() {
+    if (size_1.checked) {
+      return size_1_lbl.innerHTML;
+    }
+    if (size_2.checked) {
+      return size_2_lbl.innerHTML;
+    }
+    if (size_3.checked) {
+      return size_3_lbl.innerHTML;
+    }
+  }
+  let luck = getthechecked();
+  let itemobj = {
+    prodname: productname,
+    price: price,
+    prodsize: luck,
+    prodquantity: prodquantity,
+    prodimg: prodimg
+  }
+  shoparray.push(itemobj);
+  checkthearray(shoparray);
+}
+
+const checkthearray = (arr) => {
+  if (arr.length > 1) {
+    for (let i = 0; i < arr.length; i++) {
+      if (arr[i].prodname == arr[i+1].prodname) {
+        arr.splice(0, 1);
+        setthedata(arr, i);
+      }
+    }
+  } else {
+    setthedata(arr, 0);
+  }
+}
+const setthedata = (arr, i) => {
+  let stl = localStorage.length;
+  if (stl > 0) {
+      checkthestorage(arr, i, stl);
+  } else {
+    localStorage.setItem(0, [arr[i].prodname, arr[i].price, arr[i].prodsize, arr[i].prodquantity, arr[i].prodimg]);
+    refreshpurchases();
+  }
+}
+
+const checkthestorage = (arr, i, stl) => {
+  if ((localStorage.getItem(stl - 1).split(',')[0]) !== arr[i].prodname) {
+    localStorage.setItem(stl, [arr[i].prodname, arr[i].price, arr[i].prodsize, arr[i].prodquantity, arr[i].prodimg]);
+    refreshpurchases();
+  }
+  if ((localStorage.getItem(stl - 1).split(',')[0]) == arr[i].prodname) {
+    localStorage.removeItem(stl - 1);
+    localStorage.setItem(stl - 1, [arr[i].prodname, arr[i].price, arr[i].prodsize, arr[i].prodquantity, arr[i].prodimg]);
+    refreshpurchases();
+  }
+}
+
 document.onclick = (event) => {
   if (event.target.id.slice(0, event.target.id.indexOf('_')) == 'shpcrtrembtn') {
     let id = event.target.id.slice(event.target.id.indexOf('_')+1);
