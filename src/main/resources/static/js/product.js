@@ -10,16 +10,6 @@ t_one.innerText = '£' + p_small;
 t_two.remove();
 t_three.remove();
 
-const counteradd = () => {
-  let c = parseInt(imgnumber.innerHTML);
-  imgnumber.innerHTML = c + 1;
-}
-
-const counterdeduct = () => {
-  let c = parseInt(imgnumber.innerHTML);
-  c <= 1 ? imgnumber.innerHTML = 1 : imgnumber.innerHTML = c - 1;
-}
-
 const gettheprightprice = (int) => {
   let i;
   if (int == 1) {
@@ -83,12 +73,12 @@ const mutatetheobj = () => {
 }
 
 imgplus.onclick = () => {
-  counteradd();
+  counteradd('imgnumber');
   updatethepricemult(mutatethesubj(), mutatetheobj());
 };
 
 imgminus.onclick = () => {
-  counterdeduct();
+  counterdeduct('imgnumber');
   updatethepricedivide(mutatethesubj(), mutatetheobj());
 };
 

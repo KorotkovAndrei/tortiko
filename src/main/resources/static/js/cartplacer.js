@@ -11,8 +11,8 @@ function placeCart() {
 
     </div>
     <div class="the-summing-up">
-        <p>Quantity: </p>
-        <p>Total: £</p>
+        <p id='shoptotquant'>Quantity: </p>
+        <p id='shoptotprice'>Total: £</p>
     </div>
     <div class="shopping-button-nest">
       <button type="button" name="button">Check-out</button>

@@ -1,3 +1,17 @@
+const counteradd = (id) => {
+  let handled = document.querySelector(`#${id}`)
+  let c = parseInt(handled.innerHTML);
+  handled.innerHTML = c + 1;
+  return handled.innerHTML;
+}
+
+const counterdeduct = (id) => {
+  let handled = document.querySelector(`#${id}`)
+  let c = parseInt(handled.innerHTML);
+  c <= 1 ? handled.innerHTML = 1 : handled.innerHTML = c - 1;
+  return handled.innerHTML;
+}
+
 const refreshpurchases = () => {
   let targetwindow = document.querySelector('.chosen-item-list');
   targetwindow.textContent = '';
@@ -16,7 +30,7 @@ const refreshpurchases = () => {
               <p>${localStorage.getItem(i).split(',')[0]}</p>
             </div>
             <div class="item-price">
-              <p>${localStorage.getItem(i).split(',')[1]}</p>
+              <p id="itemprice_${i}">${localStorage.getItem(i).split(',')[1]}</p>
             </div>
           </div>
 
@@ -26,9 +40,9 @@ const refreshpurchases = () => {
 
           <div class="item-options">
             <div class="item-moreless">
-              <img src="img/minus-button.png" alt="">
-                <p>${localStorage.getItem(i).split(',')[3]}</p>
-              <img src="img/plus-button.png" alt="">
+              <img id="itemminusbtn_${i}" src="img/minus-button.png" alt="">
+                <p id="itemquantnum_${i}" >${localStorage.getItem(i).split(',')[3]}</p>
+              <img id="itemplussbtn_${i}" src="img/plus-button.png" alt="">
             </div>
             <div class="remove">
               <button id="shpcrtrembtn_${i}" type="button" name="button">remove</button>
@@ -40,9 +54,9 @@ const refreshpurchases = () => {
       </div>
     `);
   }
+  refreshshopqandt();
 }
 
-window.addEventListener("onload", refreshpurchases());
 
 const carthandle = (sizebtn1_id, sizebtn2_id, sizebtn3_id, productname_id, price_class_or_id, quantity_id, productpic_id) => {
   let shoparray = [];
@@ -65,7 +79,7 @@ const carthandle = (sizebtn1_id, sizebtn2_id, sizebtn3_id, productname_id, price
   let price = handletheprice();
   let productname = document.querySelector(`#${productname_id}`).innerHTML;
   const handlethequantity = () => {
-    if (quantity_id = '1') {
+    if (quantity_id == '1') {
       return 1;
     } else {
       return document.querySelector(`#${quantity_id}`).innerHTML;
@@ -115,24 +129,52 @@ const setthedata = (arr, i) => {
   } else {
     localStorage.setItem(0, [arr[i].prodname, arr[i].price, arr[i].prodsize, arr[i].prodquantity, arr[i].prodimg]);
     refreshpurchases();
+    refreshshopqandt();
   }
 }
 
 const checkthestorage = (arr, i, stl) => {
-  if ((localStorage.getItem(stl - 1).split(',')[0]) !== arr[i].prodname) {
-    localStorage.setItem(stl, [arr[i].prodname, arr[i].price, arr[i].prodsize, arr[i].prodquantity, arr[i].prodimg]);
-    refreshpurchases();
-  }
-  if ((localStorage.getItem(stl - 1).split(',')[0]) == arr[i].prodname) {
-    localStorage.removeItem(stl - 1);
-    localStorage.setItem(stl - 1, [arr[i].prodname, arr[i].price, arr[i].prodsize, arr[i].prodquantity, arr[i].prodimg]);
-    refreshpurchases();
+  if (Object.prototype.toString.call(arr[i]) == '[object Object]') {
+    if ((localStorage.getItem(stl - 1).split(',')[0]) !== arr[i].prodname) {
+      localStorage.setItem(stl, [arr[i].prodname, arr[i].price, arr[i].prodsize, arr[i].prodquantity, arr[i].prodimg]);
+      refreshpurchases();
+      refreshshopqandt();
+    }
+    if ((localStorage.getItem(stl - 1).split(',')[0]) == arr[i].prodname) {
+      localStorage.removeItem(stl - 1);
+      localStorage.setItem(stl - 1, [arr[i].prodname, arr[i].price, arr[i].prodsize, arr[i].prodquantity, arr[i].prodimg]);
+      refreshpurchases();
+      refreshshopqandt();
+    }
+  } else {
+      localStorage.removeItem(i);
+      localStorage.setItem(i, arr);
+      refreshpurchases();
+      refreshshopqandt();
   }
 }
+const givemetheid = (str) => {
+  return str.slice(str.indexOf('_')+1);
+}
+const refreshshopqandt = () => {
+  let x = document.querySelector('.chosen-item-list').children;
+  let psum = 0;
+  let qsum = 0;
+  for (let i = 0; i < x.length; i++) {
+    let price = parseInt(document.querySelector(`#itemprice_${i}`).innerHTML.slice(1));
+    let quant = parseInt(document.querySelector(`#itemquantnum_${i}`).innerHTML);
+    psum += price;
+    qsum += quant;
+  }
+  shoptotquant.innerHTML = `Quantity: ${qsum}`;
+  shoptotprice.innerHTML = `Total: £${psum}`;
+}
+
+window.addEventListener("onload", refreshpurchases());
 
 document.onclick = (event) => {
   if (event.target.id.slice(0, event.target.id.indexOf('_')) == 'shpcrtrembtn') {
-    let id = event.target.id.slice(event.target.id.indexOf('_')+1);
+    let id = givemetheid(event.target.id);
     if ((parseInt(id) + 1) == localStorage.length) {
       localStorage.removeItem(id);
     } else {
@@ -144,5 +186,35 @@ document.onclick = (event) => {
       }
     }
     refreshpurchases();
+  }
+  if (event.target.id.includes('itemminusbtn')) {
+    let id = givemetheid(event.target.id);
+    let newquant = counterdeduct(`itemquantnum_${id}`);
+    let str = localStorage.getItem(id);
+    let arr = str.split(',');
+    let currprice = parseInt(document.querySelector(`#itemprice_${id}`).innerHTML.slice(1));
+    let currquant = parseInt(arr[3]);
+    let oneitemprice = currprice / currquant;
+    if (currquant == 1) {
+      return;
+    } else {
+      arr[3] = newquant;
+      arr[1] = `£${currprice - oneitemprice}`;
+      checkthestorage(arr, id, null);
+      refreshshopqandt();
+    }
+  }
+  if (event.target.id.includes('itemplussbtn')) {
+    let id = givemetheid(event.target.id);
+    let newquant = counteradd(`itemquantnum_${id}`);
+    let str = localStorage.getItem(id);
+    let arr = str.split(',');
+    let currprice = parseInt(document.querySelector(`#itemprice_${id}`).innerHTML.slice(1));
+    let currquant = parseInt(arr[3]);
+    let oneitemprice = currprice / currquant;
+    arr[3] = newquant;
+    arr[1] = `£${oneitemprice * newquant}`;
+    checkthestorage(arr, id, null);
+    refreshshopqandt();
   }
 }

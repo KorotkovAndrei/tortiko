@@ -242,10 +242,7 @@ nav{
   display: flex;
   justify-content: space-between;
 }
-.item-sizing{
-  display: flex;
-  justify-content: center;
-}
+
 .item-sizing p{
   outline: none;
   border-radius: 30px;
@@ -256,6 +253,7 @@ nav{
   font-weight: 600;
   color: white;
   width: 21%;
+  text-align: center;
 }
 .item-moreless{
   display: flex;
@@ -272,6 +270,7 @@ nav{
 }
 .item-moreless img{
   height: 25px;
+  cursor: pointer;
 }
 .remove button{
   outline: none;
